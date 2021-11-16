@@ -1,0 +1,222 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+body{
+  font-family: 'Playfair Display', serif;
+}
+
+.btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+
+    :hover{
+    outline: none;
+    }
+
+    :active {
+        transform: scale(0.98);
+    }
+  }
+
+  %align-text-vertically{ //aligns text within box vertically/horizonally
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Project Components */
+
+  ul{
+    margin-left:40px;
+  }
+
+  .projectbox {
+    //background-image:(''); //Add image for project
+    background-color:aquamarine; 
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+    
+    @extend %align-text-vertically;
+
+    &.projectViewed {
+        border-left: 5px solid green;
+    }
+
+    &:hover{
+      background-color: pink !important;
+    }
+  }
+
+  .pDetailsContainer{
+    background-color: rgb(224, 224, 224);
+  }
+
+  .projectDetailsBox{
+    height: 400px;
+    padding: 10px;
+  }
+
+ 
+  /*Nav Social Media  */
+  .nav-box{
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;;
+    background-color: white;
+  }
+
+  .social-colour{
+    &:hover{
+      background-color:rgb(172, 172, 172);
+      border-radius: 60%;
+    }
+  }
+
+/*****************************/
+/*****************************/
+/* About Me  */
+/*****************************/
+/*****************************/
+
+.about-background{ /*adds a gradient to background */
+  background: linear-gradient(-25deg, #ff6a3d, #29d4ff, #23d523, #d52323);
+	background-size: 600% 600%;
+	animation: gradient 10s ease infinite;
+	height: 50vh; 
+  position: relative;
+  z-index: 10;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px
+}
+
+@keyframes gradient { /* animates gradient */
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 10% 50%;
+	}
+}
+
+.about-intro{
+  @extend %align-text-vertically;
+}
+
+.about-text-colour{
+  color: #fff;
+}
+
+.about-profile-img{
+  height: 150px;
+  width: 150px;
+  border-radius: 50% 15%;
+  box-sizing: border-box;
+	border: 2px white solid;
+  overflow: hidden;
+	box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.473);
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+}
+
+.tt{
+  @extend %align-text-vertically;
+}
+
+/*****************************/
+/*****************************/
+/* Project Details */
+/*****************************/
+/*****************************/
+
+.game-post{
+  background: #2980B9; 
+  background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9); 
+  background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9); 
+}
+
+.iframe-style{ /* iframe taskDetails */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  background-color: rgba(216, 216, 216, 0.952);
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.avatar {
+  position: absolute;
+	width: 150px;
+	height: 150px;
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+	img { width: 100%; height: auto; }
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {	
+		transform: translatey(-20px);
+	}
+	100% {		
+		transform: translatey(0px);
+	}
+}
+
+// .svg-wrapper {
+//   height: 60px;
+// 	margin: 0 auto;
+//   position: relative;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   width: 320px;
+// }
+
+// .shape {
+//   fill: transparent;
+//   stroke-dasharray: 140 540;
+//   stroke-dashoffset: -474;
+//   stroke-width: 8px;
+//   stroke: #064ed3;
+// }
+
+// .text {
+//   color: #fff;
+//   font-family: 'Roboto Condensed';
+//   font-size: 22px;
+//   letter-spacing: 8px;
+//   line-height: 32px;
+//   position: relative;
+//   top: -48px;
+// }
+
+// @keyframes draw {
+//   0% {
+//     stroke-dasharray: 140 540;
+//     stroke-dashoffset: -474;
+//     stroke-width: 8px;
+//   }
+//   100% {
+//     stroke-dasharray: 760;
+//     stroke-dashoffset: 0;
+//     stroke-width: 1px;
+//   }
+// }
+
+// .svg-wrapper:hover .shape {
+//   -webkit-animation: 0.6s draw linear forwards;
+//   animation: 0.6s draw linear forwards;
+// }
