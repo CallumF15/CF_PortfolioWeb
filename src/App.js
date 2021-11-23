@@ -5,6 +5,7 @@ import Footer from './Components/footer'
 import React, { useState } from 'react'
 import './index.scss'
 import { FaWindows } from 'react-icons/fa'
+  import 'bootstrap/dist/js/bootstrap.bundle';
 
 const App = () => {
 
@@ -41,15 +42,12 @@ const App = () => {
                 task.id === id ? { ...task, reminder: !task.reminder } : { ...task, reminder: false }))
     }//confirm keeps firing without condition being met?
 
-
-
     return (
         <> {/* '<>' same as '<React.Fragment>' */}
             <Header title='Header Name' />
             <About />
             <Tasks tasks={tasks} onViewed={toggleTaskViewed4} />
             {/* <p>{!data ? "Loading..." : data}</p> */}
-
             <Footer fullname='Callum Flannagan' />
         </>
     )

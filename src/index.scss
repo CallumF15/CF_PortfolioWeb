@@ -3,7 +3,8 @@
 
 // Include any default variable overrides here (though functions won't be available)
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+//@import "../node_modules/bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 body{
@@ -91,7 +92,7 @@ body{
 /*****************************/
 
 .about-background{ /*adds a gradient to background */
-  background: linear-gradient(-25deg, #ff6a3d, #29d4ff, #23d523, #d52323);
+  background: linear-gradient(-25deg, #ff6a3d, #29d4ff, #11ff9c, #fd1b1b);
 	background-size: 600% 600%;
 	animation: gradient 10s ease infinite;
 	height: 50vh; 
@@ -146,6 +147,11 @@ body{
   background: #2980B9; 
   background: -webkit-linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9); 
   background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9); 
+
+	margin: 0;
+	padding: 0;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .iframe-style{ /* iframe taskDetails */
@@ -174,49 +180,45 @@ body{
 	100% {		
 		transform: translatey(0px);
 	}
+}  
+
+/* clouds */
+
+.background-wrap {
+	inset: 0;
+	z-index: -1;
+  height: 20vh;
 }
 
-// .svg-wrapper {
-//   height: 60px;
-// 	margin: 0 auto;
-//   position: relative;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   width: 320px;
-// }
+@keyframes animateCloud {
+  0% {
+      margin-left: -200px;
+  }
+  100% {
+      margin-left: 100%;
+  }
+}
 
-// .shape {
-//   fill: transparent;
-//   stroke-dasharray: 140 540;
-//   stroke-dashoffset: -474;
-//   stroke-width: 8px;
-//   stroke: #064ed3;
-// }
+.cloud-1{
+   width: 150px;
+   height: 150px;
+	img { width: 100%; height: auto; }
+  
+	-webkit-animation: animateCloud 20s linear infinite;
+	-moz-animation: animateCloud 20s linear infinite;
+	animation: animateCloud 20s linear infinite;
+	
+	-webkit-transform: scale(0.65);
+	-moz-transform: scale(0.65);
+	transform: scale(0.65);
+}
 
-// .text {
-//   color: #fff;
-//   font-family: 'Roboto Condensed';
-//   font-size: 22px;
-//   letter-spacing: 8px;
-//   line-height: 32px;
-//   position: relative;
-//   top: -48px;
-// }
+.cloud-2{
+  -webkit-animation: animateCloud 30s linear infinite;
+	-moz-animation: animateCloud 30s linear infinite;
+	animation: animateCloud 30s linear infinite;
 
-// @keyframes draw {
-//   0% {
-//     stroke-dasharray: 140 540;
-//     stroke-dashoffset: -474;
-//     stroke-width: 8px;
-//   }
-//   100% {
-//     stroke-dasharray: 760;
-//     stroke-dashoffset: 0;
-//     stroke-width: 1px;
-//   }
-// }
-
-// .svg-wrapper:hover .shape {
-//   -webkit-animation: 0.6s draw linear forwards;
-//   animation: 0.6s draw linear forwards;
-// }
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	transform: scale(0.5);
+}
