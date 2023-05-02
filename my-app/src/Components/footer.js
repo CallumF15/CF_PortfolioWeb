@@ -1,14 +1,24 @@
 import React from 'react'
-import '../index.scss'
+import '../Styles/index.scss'
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 
 const Footer = (props) => {
     return (
-        <div className="bg-dark text-center text-lg-start text-light">
-            <div className="text-center p-3">
-                © 2021 Copyright -
-                <a className="text-light" href=""> {props.fullname}</a>
+        <footer className="bg-dark">
+            <div className="text-light">
+                <div className="container">
+                    <div className="p-2">
+                        <p className="text-center"> © {(new Date().getFullYear())} Copyright - {props.fullname}
+                            <a className="social-colour px-2 py-2 mx-1" href={'http://Linkedin.com/'}>
+                                <FaLinkedinIn size={20} /></a>
+
+                            <a className="social-colour px-2 py-2 mx-1" href={'http://github.com/CallumF15'}>
+                                <FaGithub className="" size={20} /> </a>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

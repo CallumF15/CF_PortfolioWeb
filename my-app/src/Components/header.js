@@ -1,48 +1,56 @@
 import PropTypes from 'prop-types'
-import '../index.scss'
-import { FaLinkedinIn  } from 'react-icons/fa'
-
-
+import '../Styles/index.scss'
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
+//import { Nav, Container } from 'react-bootstrap'
 
 //Top part of webpage - displays name/logo 
-
 const Header = (props) => {
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="#">Callum Flannagan</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+        <>
+            <nav className="navbar navbar-default sticky-top navbar-expand-lg navbar-light nav-box p-4">
+                <div className="container">
+                    <a className="navbar-brand" href="#">Callum Flannagan
+                        {/* <div class="svg-wrapper">
+                        <svg>
+                            <rect class="shape" height="50" width="100%" />
+                        </svg>
+                    </div> */}
+                    </a>
 
-                <div className="collapse navbar-collapse" id="navbarNav">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
-                    <ul className="navbar-nav">
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav ms-auto pe-5">
 
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">Projects <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">About</a>
-                        </li>
-                        < li className="nav-item" >
-                            <a className="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
+                            <li className="nav-item">
+                                <a className="nav-link active" href="#">Projects <span className="sr-only">(current)</span></a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">About</a>
+                            </li>
+                            < li className="nav-item" >
+                                <a className="nav-link" href="#">Contact</a>
+                            </li>
 
-                    <ul className="navbar-nav nav-flex-icons ml-auto">
-                        <li className="nav-item">
-                            <a className="nav-link waves-effect waves-light">
-                                <FaLinkedinIn/>
-                            </a>
-                        </li>
-                    </ul>
+                            <li className="nav-item">
+                                <a className="nav-link waves-effect waves-light social-colour">
+                                    <FaLinkedinIn size={20} />
+                                </a>
+                            </li>
+
+                            <li className="nav-item">
+                                <a className="nav-link waves-effect waves-light social-colour" href={'http://github.com/CallumF15'}>
+                                    <FaGithub className="" size={20} />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
-
-            <h1> {props.title} </h1>
-
-        </div>
+        </>
     )
 }
 
@@ -51,7 +59,7 @@ Header.defaultProps = {  //if no value assigned to prop, assign this
 }
 
 //Assign data type of prop
-Header.propTypes ={  
+Header.propTypes = {
     title: PropTypes.string,
 }
 
