@@ -1,11 +1,61 @@
 const express = require("express");
+const router = express.Router()
 const cors = require('cors');
+const bird = require('./bird')
+const path = require('path');
+
+
 
 //PORT - when deployed can't be 3000
 const PORT = process.env.PORT || 5000
 
+
+
 const app = express();
  app.use(cors());
+ //app.use(express.static(path.join(__dirname, '../myapp/src')));
+ app.use(express.static("public"));
+ app.use(express.static("src"));
+
+
+//app.use('/bird', bird)
+
+
+
+//  app.all('/secret', (req, res, next) => {
+//   console.log('Accessing the secret section ...')
+//   next() // pass control to the next handler
+// })
+
+
+
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
+
+
+
+
+
+
+// app.route('/book')
+//   .get((req, res) => {
+//     res.send('Get a random book')
+//     console.log('Get a random book');
+//   })
+//   .post((req, res) => {
+//     res.send('Add a book')
+//     console.log('Add a book');
+//   })
+//   .put((req, res) => {
+//     res.send('Update the book')
+//     console.log('Update the book');
+//   })
+
+app.get('/about', (req, res) => {
+  console.log("abouttttttttttt");
+  res.send('about');
+})
 
 app.get("/tasks", (req, res) => {
   const tasks = [
@@ -35,12 +85,32 @@ app.get("/tasks", (req, res) => {
       bgname: ""
     }
   ];
+  //console.log(tasks);
   res.json(tasks);
 });
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "public", "index.html"));
-// });
+app.get("/message", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
+
+// create a GET route
+app.get('/*', (req, res) => {
+  console.log("hello");
+  // update this path to match how you set up express to serve static and where your build is output to
+  res.send(res.sendFile(path.join(__dirname, 'myapp','public', 'index.html')));
+});
+
+
+app.get('/', (req, res) => {
+  console.log("hello");
+  res.send('hello world');
+
+
+  //let pathdirectory = ["myapp", "src"];
+  //res.sendFile(path.join(__dirname, ...pathdirectory, "App.js"));
+  /// pathdirectory = ["myapp","public"];
+  //res.status(200).sendFile(path.join(__dirname, ...pathdirectory, "index.html"));
+})
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
