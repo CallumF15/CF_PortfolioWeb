@@ -76,6 +76,25 @@ $btn-white: #fff;
   align-items: center;
 }
 
+////////////////////////////
+/// 
+//////////////////////////
+.dialog {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  width: 50%;
+  height: 80%;
+  background: #eee;
+}
+
+dialog::backdrop{
+  background-color: salmon;
+}
+
 ////////////////////////
 /* Projects */
 ////////////////////////
@@ -101,6 +120,16 @@ ul {
   }
 }
 
+.project-img{
+  padding: 5px solid black;
+  height: 200px;
+}
+
+.project-img-height{
+  height: 350px;
+  max-height: 400px;
+}
+
 .project-bg-border {
   border-radius: 3px;
 }
@@ -113,7 +142,7 @@ ul {
 
 /*****************************/
 /*****************************/
-/* About Me  */
+/* About Me Landing Page*/
 /*****************************/
 /*****************************/
 
@@ -178,6 +207,20 @@ ul {
   background-color: pink;
   // -webkit-transform: scaleX(-1); //flip image
   // transform: scaleX(-1); //flip image
+}
+
+/*****************************/
+/*****************************/
+/* About Me Details*/
+/*****************************/
+/*****************************/
+
+.about{
+  background-color: pink;
+}
+
+.about-me{
+
 }
 
 /*****************************/

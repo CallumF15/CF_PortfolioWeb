@@ -1,6 +1,6 @@
-import cloud from '../Images/cloud-1.png'
-import projectimg from '../Images/game-dev-img.jpg'
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
+//import cloud from '../Images/cloud-1.png'
+//import projectimg from '../Images/game-dev-img.jpg'
+//import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 
 const gallery = ({ }) => {
     return (
