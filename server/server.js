@@ -65,7 +65,7 @@ app.get("/", (req, res) => {
 
 var obj, tasks;
 app.get("/tasks", (err, res) => {
-  fs.readFile('./projects.json', 'utf8', function (err, data) {
+  fs.readFile('projects.json', 'utf8', function (err, data) {
     if (err){
       console.log("error reading file: " + err);
       throw err;
