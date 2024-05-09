@@ -4,7 +4,7 @@ import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa'
 import { Link, animateScroll as scroll } from 'react-scroll'
 import { IconContext } from 'react-icons/lib'
 
-//Top part of webpage - displays name/logo 
+//Top part of webpage - displays name/logo
 const Header = ({ fullname }) => {
     const githubLink = "http://github.com/CallumF15";
     const linkedInLink = "/#";
