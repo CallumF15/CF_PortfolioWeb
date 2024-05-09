@@ -1,19 +1,22 @@
 import Header from './Components/header'
 import LandingPage from './Components/landingpage'
-import Tasks from './Components/tasks'
+import Tasks from './Components/projects/tasks'
 import Footer from './Components/footer'
 import React, { useState } from 'react'
 import './Styles/index.scss'
-//import { FaWindows } from 'react-icons/fa'
 import 'bootstrap/dist/js/bootstrap.bundle';
-import { Element } from 'react-scroll';
 import CookieDialog from './Components/cookieDialog'
-import { get } from 'react-scroll/modules/mixins/scroller'
+import About from './Components/about'
+
+
+//import { FaWindows } from 'react-icons/fa'
+// import { get } from 'react-scroll/modules/mixins/scroller'
 
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [modal, setModal] = useState(false);
+
   const fullname = "Callum Flannagan";
 
   React.useEffect(() => {
@@ -28,32 +31,12 @@ const App = () => {
       .catch((error) => {
         console.error('Error setting state:', error);
       });
-
-
-
-    // // Registering the 'begin' event and logging it to the console when triggered.
-    // Events.scrollEvent.register('begin', (to, element) => {
-    //   console.log('begin', to, element);
-    // });
-
-    // // Registering the 'end' event and logging it to the console when triggered.
-    // Events.scrollEvent.register('end', (to, element) => {
-    //   console.log('end', to, element);
-    // });
-
-    // // Updating scrollSpy when the component mounts.
-    // scrollSpy.update();
-
-    // return () => {
-    //   Events.scrollEvent.remove('begin');
-    //   Events.scrollEvent.remove('end');
-    // };
   }, []);
 
 
   async function fetchTasks() {
     try {
-      const response = await fetch('/tasks'); // Replace with your API endpoint
+      const response = await fetch('/tasks');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -65,31 +48,6 @@ const App = () => {
     }
   }
 
-  // async function fetchTasks() {
-  //   const response = await fetch("/tasks")
-  //     .then(function (res) { 
-  //       var json = res.json();  
-  //       console.log("res json: " + json);
-  //     })
-  //     .then(tasks => { setTasks(tasks); console.log("tasks: " + tasks) })
-  //     .catch(error => console.log("fetch error is: " + error))
-
-  //   console.log("response: " + response);
-  // }
-
-  // async function fetchTasks() {
-  //   fetch('/tasks')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setTasks(data.tasks);
-  //       //console.log("tasks: " + tasks); // Display the tasks array
-  //       //console.log("length: ", Object.keys(tasks).length)
-  //     })
-  //     .catch(error => console.error('Error fetching tasks:', error));
-
-  //     getNestedJsonObject();
-  // }
-
   function calculateNestedJSONLength() {
     tasks.map(
       (item) => {
@@ -97,7 +55,6 @@ const App = () => {
         return console.log("test details: " + item.projectdetails.team);
       })
   }
-
 
   /* Toggle Viewed Task */
   const toggleTaskViewed = (id) => {
@@ -134,19 +91,11 @@ const App = () => {
         Modal content. grg rgg
       </CookieDialog>
 
-      <Element name="about" className="about">
-        <LandingPage fullname={fullname} />
-      </Element>
-
-      <Element name="projects" className="projects">
-        {console.log("HIT element: ", tasks)}
-        <Tasks tasks={tasks} onViewed={toggleTaskViewed} />
-      </Element>
-
+      <LandingPage fullname={fullname} />
+      <About />
+      {/* {console.log("HIT element: ", tasks)} */}
+      <Tasks tasks={tasks} onViewed={toggleTaskViewed} />
       <Footer fullname={fullname} />
-
-      {/* <p>{!data ? "Loading..." : data}</p> */}
-      {/* Element components that act as scroll targets */}
     </React.Fragment>
   )
 }

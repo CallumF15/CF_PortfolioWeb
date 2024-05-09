@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import '../Styles/index.scss'
 import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa'
 import { Link, animateScroll as scroll } from 'react-scroll'
+import { IconContext } from 'react-icons/lib'
 //import { Nav, Container } from 'react-bootstrap'
 
 //Top part of webpage - displays name/logo 
@@ -13,13 +14,13 @@ const Header = ({ fullname }) => {
         <>
             <nav className="navbar navbar-default sticky-top navbar-expand-lg navbar-light nav-box p-4">
                 <div className="container">
-                    <a className="navbar-brand" href="/#">{fullname}
-                        {//maybe replace name with logo
-                            /* <div class="svg-wrapper">
-                        <svg>
-                            <rect class="shape" height="50" width="100%" />
-                        </svg>
-                    </div> */}
+                    <a className="navbar-brand" href="/#">
+                        {fullname}
+                        {/* <div class="svg-wrapper">
+                            <svg>
+                                <rect class="shape" height="50" width="100%" />
+                            </svg>
+                        </div> */}
                     </a>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,23 +31,24 @@ const Header = ({ fullname }) => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto pe-5">
 
-                            <li className="nav-item">
+                            <li className="nav-item social-colour">
                                 <a onClick={() => scroll.scrollToTop} className="nav-link" href="/#"> Home </a>
                             </li>
 
-                            <li className="nav-item" >
+                            <li className="nav-item social-colour" >
                                 <Link
                                     activeClass="active"
-                                    to="about"
+                                    to="About"
                                     spy={true}
                                     smooth={true}
-                                    offset={0}
+                                    offset={-80}
                                     duration={500}>
-                                </Link>
 
-                                <a className="nav-link" href="/#">About</a>
+                                    <a className="nav-link" href="/#">About</a>
+                                </Link>
                             </li>
-                            <li className="nav-item" >
+
+                            <li className="nav-item social-colour" >
                                 <Link
                                     activeClass="active"
                                     to="projects"
@@ -54,34 +56,30 @@ const Header = ({ fullname }) => {
                                     smooth={true}
                                     offset={-90}
                                     duration={500}>
+
+                                    <a className="nav-link" href="/#">Projects</a>
                                 </Link>
-
-                                <a className="nav-link" href="/#">Projects</a>
                             </li>
 
-                            {//li with "sr-only" 
-                                /* <li className="nav-item">
-                                <a className="nav-link active" href="#">Projects <span className="sr-only">(current)</span></a>
-                            </li> */}
+                            <IconContext.Provider value={{ size: 20 }}>
+                                <li className="nav-item social-colour me-1">
+                                    <a className="nav-link waves-effect waves-light" href="mailto: CallumFlannagan@hotmail.com?subject=Portfolio%Feedback">
+                                        <FaEnvelope />
+                                    </a>
+                                </li>
 
+                                <li className="nav-item social-colour me-1">
+                                    <a className="nav-link waves-effect waves-light" href={linkedInLink}>
+                                        <FaLinkedinIn />
+                                    </a>
+                                </li>
 
-                            <li className="nav-item social-colour me-1">
-                                <a className="nav-link waves-effect waves-light" href="mailto: CallumFlannagan@hotmail.com?subject=Portfolio%Feedback">
-                                    <FaEnvelope size={20} />
-                                </a>
-                            </li>
-
-                            <li className="nav-item social-colour me-1">
-                                <a className="nav-link waves-effect waves-light" href={linkedInLink}>
-                                    <FaLinkedinIn size={20} />
-                                </a>
-                            </li>
-
-                            <li className="nav-item social-colour">
-                                <a className="nav-link waves-effect waves-light" href={githubLink}>
-                                    <FaGithub className="" size={20} />
-                                </a>
-                            </li>
+                                <li className="nav-item social-colour">
+                                    <a className="nav-link waves-effect waves-light" href={githubLink}>
+                                        <FaGithub />
+                                    </a>
+                                </li>
+                            </IconContext.Provider>
                         </ul>
                     </div>
                 </div>

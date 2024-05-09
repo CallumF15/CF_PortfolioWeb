@@ -2,48 +2,56 @@
   "tasks": [
     {
       "id": 1,
+      "type": "University Project",
       "name": "Super Hero Game",
-      "desc": "The game concept was simple, play as a super hero soaring through the sky whilst in the persuit of an evil villain who is relentlessly targetting you whilst you collect coins and power-ups to aid you in your battle.",
+      "desc": "A 2D superhero video game targeted towards children which utilizes the technology LeapMotion for hand gesture recognition to enable character movement. Initially the LeapMotion technology was used to enable hand gesture recognition to manipulate the character’s movement to fly at an angle that's based on the pitch of your hand. The idea of a kid playing with his superman-like action figure by grasping the figures legs and pretending he was soaring through the sky spawned the idea for how the control scheme for the game would work. ", 
+      "desc2": "The concept for the game was simple. Play as a superhero soaring through the sky whilst in the pursuit of an evil villain who is relentlessly targeting you whilst you collect coins and power-ups to aid you in your battle to defeat him.  ", 
+      "desc3": "The project has been updated to be used within a browser using a mouse to manipulate movement.",
       "link": "../SuperHeroGame/game.html",
-      "bg": "Initially the LeapMotion technology was used to enable hand gesture recognition to manipulate the character’s movement to fly at an angle that's based on the pitch of your hand.  The idea of a kid playing with his superman-like action figure by grasping the figures legs and pretending he was soaring through the sky spawned the idea for how the control scheme for the game would work. The project has been updated to be used within a browser using a mouse to manipulate movement.",
-      "bglink": "a",
-      "bgname": "a",
+      "image": "Images/flygame.jpg",
       "projectdetails": {
         "team": "Artist, 3D modeller, Designer, Psychologist, Programmer",
         "targetAudience": "Children",
-        "techUsed": "C#,Unity,LeapMotion",
-        "ah": "ah",
-        "b": "b"
+        "techUsed": "C#,Unity,LeapMotion"
       }
     },
     {
       "id": 2,
+      "type": "University Project",
       "name": "Procedural Content Generation",
-      "desc": "Collecting user data to adjust and alter the algorithm ",
+      "desc": "A 2D game that utilizes a procedural content algorithm (Perlin Noise) to generate the world combined with collecting player data such as how often they perform certain actions, how many times they die and how long it takes them to finish a level to determine how best to generate the next world for them.",
       "link": "../Game2/game.html",
-      "bg": "a",
-      "bglink": "a",
-      "bgname": "a",
+      "image": "Images/PCG-game.jpg",
       "projectdetails": {
         "team": "Programmer",
         "targetAudience": "All audiences",
-        "techUsed": "C#, Unity",
-        "ah": "ah"
+        "techUsed": "C#, Unity"
       }
     },
     {
       "id": 3,
+      "type": "University Project",
       "name": "Mobile Platformer",
-      "desc": "An endless jumping platformer where you ",
+      "desc": "A 2D endless jumping platformer game where the user has to time their jumps to land on the next platform, building up their score and seeing how far they can get before they miss a platform and their current attempt ends.",
       "link": "../Game3/game.html",
-      "bg": "a",
-      "bglink": "a",
-      "bgname": "a",
+      "image": "Images/PlatformerGame.jpg",
       "projectdetails": {
         "team": "Programmer",
         "targetAudience": "All audiences",
-        "techUsed": "C#, Unity",
-        "ah": "ah"
+        "techUsed": "C#, Unity"
+      }
+    },
+    {
+      "id": 4,
+      "type": "Job Project",
+      "name": "Website Test 19394949",
+      "desc": "A portfolio website bgko rog rgko kgdpokgop gkpkgop gdgk  ",
+      "link": "../Game3/game.html",
+      "image": "Images/flygame.jpg",
+      "projectdetails": {
+        "team": "Programmer",
+        "targetAudience": "All audiences",
+        "techUsed": "C#, Unity"
       }
     }
   ]
