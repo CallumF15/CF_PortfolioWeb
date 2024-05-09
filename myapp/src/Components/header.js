@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import '../Styles/index.scss'
 import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa'
 import { Link, animateScroll as scroll } from 'react-scroll'
 import { IconContext } from 'react-icons/lib'
