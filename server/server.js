@@ -18,9 +18,7 @@ app.use(cors());
 app.use(express.static("public"));
 app.use(express.static("src"));
 
-
 //app.use('/bird', bird)
-
 
 app.use(cookieParser())
 app.use(session({
@@ -41,8 +39,6 @@ app.get("/", (req, res) => {
   console.log(__dirname);
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-
-
 
 // app.route('/book')
 //   .get((req, res) => {
