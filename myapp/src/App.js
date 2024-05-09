@@ -4,7 +4,7 @@ import Tasks from './Components/projects/tasks'
 import Footer from './Components/footer'
 import React, { useState } from 'react'
 import './Styles/index.scss'
-import 'bootstrap/dist/js/bootstrap.bundle';
+//import 'bootstrap/dist/js/bootstrap.bundle';
 import CookieDialog from './Components/cookieDialog'
 import About from './Components/about'
 

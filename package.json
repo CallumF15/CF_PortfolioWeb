@@ -17,8 +17,5 @@
     "server": "nodemon .\\server\\server.js --ignore client",
     "client": "npm start --prefix myapp",
     "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
-  "devDependencies": {
-    "gh-pages": "^6.1.1"
   }
 }
