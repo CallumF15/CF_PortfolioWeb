@@ -40,9 +40,10 @@ const Header = ({ fullname }) => {
                                     spy={true}
                                     smooth={true}
                                     offset={-80}
-                                    duration={500}>
+                                    duration={500}
+                                    className='nav-link'>
 
-                                    <a className="nav-link" href="/#">About</a>
+                                    About
                                 </Link>
                             </li>
 
@@ -53,9 +54,10 @@ const Header = ({ fullname }) => {
                                     spy={true}
                                     smooth={true}
                                     offset={-90}
-                                    duration={500}>
+                                    duration={500}
+                                    className='nav-link'>
 
-                                    <a className="nav-link" href="/#">Projects</a>
+                                    Projects
                                 </Link>
                             </li>
 

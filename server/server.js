@@ -7,7 +7,7 @@ const cookie = require('./cookies')
 var cookieParser = require('cookie-parser')
 var session = require('express-session');
 var fs = require('fs');
-//PORT - when deployed can't be 3000
+
 const PORT = process.env.PORT || 5000
 
 
@@ -37,10 +37,12 @@ app.use(session({
 // })
 
 
+app.get("/", (req, res) => {
+  console.log(__dirname);
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "public", "index.html"));
-// });
+
 
 // app.route('/book')
 //   .get((req, res) => {
@@ -67,7 +69,7 @@ app.use(session({
 
 var obj, tasks;
 app.get("/tasks", (err, res) => {
-  fs.readFile('./server/projects.json', 'utf8', function (err, data) {
+  fs.readFile('./projects.json', 'utf8', function (err, data) {
     if (err){
       console.log("error reading file: " + err);
       throw err;
