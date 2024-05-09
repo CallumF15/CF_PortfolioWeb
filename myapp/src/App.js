@@ -1,4 +1,4 @@
-import Header from './Components/Header'
+import Header from './Components/header'
 import LandingPage from './Components/landingpage'
 import Tasks from './Components/projects/tasks'
 import Footer from './Components/footer'
