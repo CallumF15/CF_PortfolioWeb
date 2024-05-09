@@ -3,7 +3,6 @@ import '../Styles/index.scss'
 import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa'
 import { Link, animateScroll as scroll } from 'react-scroll'
 import { IconContext } from 'react-icons/lib'
-//import { Nav, Container } from 'react-bootstrap'
 
 //Top part of webpage - displays name/logo 
 const Header = ({ fullname }) => {
