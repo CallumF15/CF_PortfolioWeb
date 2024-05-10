@@ -57,7 +57,7 @@ app.get("/", (req, res) => {
 //   res.send('about');
 // })
 
-//Server PARSE json file 
+//Server PARSE json files
 var obj, tasks;
 app.get("/tasks", (err, res) => {
   fs.readFile('projects.json', 'utf8', function (err, data) {
