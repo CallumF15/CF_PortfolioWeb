@@ -35,7 +35,6 @@ app.use(express.static("src"));
 
 
 app.get("/", (req, res) => {
-  // res.sendFile(path.join(process.cwd() + "/myapp/src", "public", "index.html"));
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
