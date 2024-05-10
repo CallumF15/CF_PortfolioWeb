@@ -16,8 +16,8 @@
             "destination": "server.js"
         },
         {
-            "src": "/",
-            "dest": "public/index.html"
+            "source": "/",
+            "destination": "public/index.html"
         }
     ]
 }
