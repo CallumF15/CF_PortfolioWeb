@@ -36,7 +36,7 @@ app.use(express.static("src"));
 
 app.get("/", (req, res) => {
   console.log("Express on Vercel");
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join("public", "index.html"));
 });
 
 // app.route('/book')
