@@ -36,7 +36,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   console.log("Express on Vercel");
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  //res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // app.route('/book')
@@ -59,9 +59,6 @@ app.get("/", (req, res) => {
 // })
 
 //Server PARSE json file 
-
-
-
 var obj, tasks;
 app.get("/tasks", (err, res) => {
   fs.readFile('projects.json', 'utf8', function (err, data) {
