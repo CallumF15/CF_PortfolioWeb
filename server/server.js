@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 5000
 const app = express();
 app.use(cors());
 
-//app.use(express.static(path.join(__dirname, '../myapp/src')));
-// app.use(express.static("public"));
-// app.use(express.static("src"));
+app.use(express.static(path.join(__dirname, '../myapp/src')));
+app.use(express.static("public"));
+app.use(express.static("src"));
 //app.use('/bird', bird)
 
 //uncomment later 
@@ -36,6 +36,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   console.log("Express on Vercel");
+  res.send("Express on Vercel")
   //res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
@@ -82,33 +83,33 @@ app.get("/message", (req, res) => {
 });
 
 // create a GET route
-app.get('/*', (req, res) => {
-  console.log("hello on `'/'");
+// app.get('/*', (req, res) => {
+//   console.log("hello on `'/'");
 
-  if (req.cookies.name = "site visited times:") {
+//   if (req.cookies.name = "site visited times:") {
 
-  }
+//   }
 
-  if (req.session.page_views) {
-    req.session.page_views++;
-    console.log("you visited this page " + req.session.page_views + " times");
-    res.cookie('site visited times:', req.session.page_views).send('cookie set')
-  } else {
-    req.session.page_views = 1;
-    res.cookie('site visited times:', req.session.page_views).send('cookie set');
-  }
+//   if (req.session.page_views) {
+//     req.session.page_views++;
+//     console.log("you visited this page " + req.session.page_views + " times");
+//     res.cookie('site visited times:', req.session.page_views).send('cookie set')
+//   } else {
+//     req.session.page_views = 1;
+//     res.cookie('site visited times:', req.session.page_views).send('cookie set');
+//   }
 
-  // // Cookies that have not been signed
-  // console.log('Cookies: ', req.cookies)
+//   // // Cookies that have not been signed
+//   // console.log('Cookies: ', req.cookies)
 
-  // // Cookies that have been signed
-  // console.log('Signed Cookies: ', req.signedCookies)
+//   // // Cookies that have been signed
+//   // console.log('Signed Cookies: ', req.signedCookies)
 
-  //let pathdirectory = ["myapp", "src"];
-  //res.sendFile(path.join(__dirname, ...pathdirectory, "App.js"));
-  /// pathdirectory = ["myapp","public"];
-  //res.status(200).sendFile(path.join(__dirname, ...pathdirectory, "index.html"));
-})
+//   //let pathdirectory = ["myapp", "src"];
+//   //res.sendFile(path.join(__dirname, ...pathdirectory, "App.js"));
+//   /// pathdirectory = ["myapp","public"];
+//   //res.status(200).sendFile(path.join(__dirname, ...pathdirectory, "index.html"));
+// })
 
 // app.get('/*', (req, res) => {
 //   console.log("hello on all");
