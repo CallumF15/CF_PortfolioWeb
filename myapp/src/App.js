@@ -4,14 +4,8 @@ import Tasks from './Components/projects/tasks'
 import Footer from './Components/footer'
 import React, { useState } from 'react'
 import './Styles/index.scss'
-//import 'bootstrap/dist/js/bootstrap.bundle';
 import CookieDialog from './Components/cookieDialog'
 import About from './Components/about'
-
-
-//import { FaWindows } from 'react-icons/fa'
-// import { get } from 'react-scroll/modules/mixins/scroller'
-
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -25,8 +19,6 @@ const App = () => {
       setTasks(tasks.tasks); //returns tasks as array
 
       console.log("get valL: ", tasks.tasks);
-
-      calculateNestedJSONLength();
     })
       .catch((error) => {
         console.error('Error setting state:', error);
@@ -46,14 +38,6 @@ const App = () => {
       console.error('Error fetching data:', error);
       return null;
     }
-  }
-
-  function calculateNestedJSONLength() {
-    tasks.map(
-      (item) => {
-        console.log("test length: " + Object.keys(item.projectdetails).length); //gets the total number of the keys in projectdetails 
-        return console.log("test details: " + item.projectdetails.team);
-      })
   }
 
   /* Toggle Viewed Task */
