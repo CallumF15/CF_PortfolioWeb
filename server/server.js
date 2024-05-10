@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.use(express.static("src"));
 //app.use('/bird', bird)
 
-//uncomment later 
+//uncomment later a
 // app.use(cookieParser())
 // app.use(session({
 //   secret: "Shh, its a secret!",
