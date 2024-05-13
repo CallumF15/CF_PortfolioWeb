@@ -10,10 +10,10 @@
     "react": "^18.2.0"
   },
   "scripts": {
-    "start": "node server.js",
-    "nodestart": "nodemon server.js",
-    "server": "nodemon .\\server\\server.js --ignore client",
+    "start": "node index.js",
+    "nodestart": "nodemon index.js",
+    "server": "nodemon .\\index\\index.js --ignore client",
     "client": "npm start --prefix ../myapp",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run index\" \"npm run client\""
   }
 }
