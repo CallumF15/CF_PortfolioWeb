@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser')
 var session = require('express-session');
 var fs = require('fs');
 
-const PORT = process.env.PORT || 5000 
+const PORT = process.env.PORT || 3001; 
 
 const app = express();
 app.use(cors());
