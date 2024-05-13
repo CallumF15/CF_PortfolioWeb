@@ -13,9 +13,11 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, '../myapp/src')));
-app.use(express.static("public"));
-app.use(express.static("src"));
+// app.use(express.static(path.join(__dirname, '../myapp/src')));
+app.use(express.static(path.join(__dirname,   '..' , '../myapp/public')));
+app.use(express.static(path.join(__dirname,   '..' , '../myapp/src')));
+// app.use(express.static("public"));
+// app.use(express.static("src"));
 
 //app.use('/bird', bird)
 
@@ -36,7 +38,11 @@ app.use(express.static("src"));
 
 
 app.get("/", (req, res) => {
-  // res.sendFile(path.join(__dirname, "public", "index.html"));
+//    res.sendFile(path.join('../public/index.html' , {root:__dirname}));
+//res.sendFile(path.join(__dirname, '..' , '../public/index.html'));
+// res.sendFile('public/index.html' , { root : __dirname});
+// res.sendFile( path.resolve('src/app/index.html') );
+
   res.send("hello");
 });
 
