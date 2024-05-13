@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser')
 var session = require('express-session');
 var fs = require('fs');
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3001 
 
 const app = express();
 app.use(cors());
@@ -16,6 +16,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '../myapp/src')));
 app.use(express.static("public"));
 app.use(express.static("src"));
+
 //app.use('/bird', bird)
 
 //uncomment later a
