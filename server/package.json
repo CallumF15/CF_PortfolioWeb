@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node api/index.js",
-    "nodestart": "nodemon /apiindex.js",
+    "nodestart": "nodemon /api/index.js",
     "server": "nodemon .\\server\\api\\index.js --ignore client",
     "client": "npm start --prefix ../myapp",
     "dev": "concurrently \"npm run server\" \"npm run client\""

@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser')
 var session = require('express-session');
 var fs = require('fs');
 
-const PORT = process.env.PORT || 3001; 
+const PORT = process.env.PORT || 5000; 
 
 const app = express();
 app.use(cors());
@@ -62,7 +62,7 @@ app.get("/", (req, res) => {
 //Server PARSE json files
 var obj, tasks;
 app.get("/tasks", (err, res) => {
-  fs.readFile('projects.json', 'utf8', function (err, data) {
+  fs.readFile('api/projects.json', 'utf8', function (err, data) {
     if (err){
       console.log("error reading file: " + err);
       throw err;
