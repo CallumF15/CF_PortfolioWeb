@@ -10,7 +10,6 @@
     "react": "^18.2.0"
   },
   "scripts": {
-    "build": "npm run vercel-build",
     "start": "node server.js",
     "nodestart": "nodemon server.js",
     "server": "nodemon .\\server\\server.js --ignore client",
