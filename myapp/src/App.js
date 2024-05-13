@@ -28,7 +28,7 @@ const App = () => {
 
   async function fetchTasks() {
     try {
-      const response = await fetch('callumflannagan-server.vercel.app/tasks');
+      const response = await fetch('/tasks');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
