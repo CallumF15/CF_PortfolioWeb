@@ -8,14 +8,14 @@ var cookieParser = require('cookie-parser')
 var session = require('express-session');
 var fs = require('fs');
 
-const PORT = process.env.PORT || 5000; 
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 app.use(cors());
 
 // app.use(express.static(path.join(__dirname, '../myapp/src')));
-app.use(express.static(path.join(__dirname,   '..' , '../myapp/public')));
-app.use(express.static(path.join(__dirname,   '..' , '../myapp/src')));
+app.use(express.static(path.join(__dirname, '..', '../myapp/public')));
+app.use(express.static(path.join(__dirname, '..', '../myapp/src')));
 // app.use(express.static("public"));
 // app.use(express.static("src"));
 
@@ -38,12 +38,15 @@ app.use(express.static(path.join(__dirname,   '..' , '../myapp/src')));
 
 
 app.get("/", (req, res) => {
-//    res.sendFile(path.join('../public/index.html' , {root:__dirname}));
-//res.sendFile(path.join(__dirname, '..' , '../public/index.html'));
-// res.sendFile('public/index.html' , { root : __dirname});
-// res.sendFile( path.resolve('src/app/index.html') );
+    // res.sendFile(path.join(__dirname , '..', '../myapp/public/index.html'));
+    //    res.sendFile(path.join('../public/index.html' , {root:__dirname}));
 
-  res.send("hello");
+
+    res.send("dir: " + __dirname);
+});
+
+app.get("/test", (req, res) => {;
+      res.send("dir: " +__dirname);
 });
 
 // app.route('/book')
@@ -68,24 +71,24 @@ app.get("/", (req, res) => {
 //Server PARSE json files
 var obj, tasks;
 app.get("/tasks", (err, res) => {
-  fs.readFile('api/projects.json', 'utf8', function (err, data) {
-    if (err){
-      console.log("error reading file: " + err);
-      throw err;
-    } 
-    
-    obj = JSON.parse(data);
-    console.log("obj: " + obj)
-    //console.log("obj: " + obj[0].name)
-    tasks = JSON.stringify(obj);
-    console.log("json: " + tasks)
-  });
+    fs.readFile(__dirname + '/projects.json', 'utf8', function (err, data) {
+        if (err) {
+            console.log("error reading file: " + err);
+            throw err;
+        }
 
-  res.json(obj);
+        obj = JSON.parse(data);
+        console.log("obj: " + obj)
+        //console.log("obj: " + obj[0].name)
+        tasks = JSON.stringify(obj);
+        console.log("json: " + tasks)
+    });
+
+    res.json(obj);
 })
 
 app.get("/message", (req, res) => {
-  res.json({ message: "Hello from server!" });
+    res.json({ message: "Hello from server!" });
 });
 
 // create a GET route
@@ -124,7 +127,7 @@ app.get("/message", (req, res) => {
 // });
 
 app.listen(PORT, () => {
-  console.log(`Server listening on test: ${PORT}`);
+    console.log(`Server listening on test: ${PORT}`);
 })
 
 module.exports = app	
