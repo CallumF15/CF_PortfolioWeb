@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
 import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa'
 import { Link, animateScroll as scroll } from 'react-scroll'
 import { IconContext } from 'react-icons/lib'
+import 'bootstrap/dist/js/bootstrap.bundle'
 
 //Top part of webpage - displays name/logo
 const Header = ({ fullname }) => {
@@ -86,15 +86,6 @@ const Header = ({ fullname }) => {
             </nav>
         </>
     )
-}
-
-Header.defaultProps = {  //if no value assigned to prop, assign this
-    title: 'Test 1 2 3',
-}
-
-//Assign data type of prop
-Header.propTypes = {
-    title: PropTypes.string,
 }
 
 export default Header

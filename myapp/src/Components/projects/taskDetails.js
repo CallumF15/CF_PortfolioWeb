@@ -28,7 +28,7 @@ const TaskDetails = ({ task }) => {
                 </div>
             </div> */}
 
-            <section className="p-details pb-5 pt-5">
+            <section className="p-details pb-5 pt-5" id="taskDetails">
                 <article className="container project-innerdetails shadow-sm bg-light">
                     <div className='row row-col-1 row-col-md-2 display-flex'>
 
@@ -36,7 +36,7 @@ const TaskDetails = ({ task }) => {
                             <h2 className="display-4 fw-bold title-underline text-center pt-5 pb-2 mb-5"> {task.name} </h2>
                         </div>
 
-                        <ProjectDetailsAbout task={task} stringImage={stringImage} />
+                        <ProjectDetailsAbout task={task} stringImage={stringImage}/>
                         <ProjectDetailsInfo task={task} stringImage={stringImage}/>
 
                         {/* <Gallery> </Gallery> */}

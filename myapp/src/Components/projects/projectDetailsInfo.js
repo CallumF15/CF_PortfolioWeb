@@ -1,5 +1,4 @@
 import { FaGithub } from 'react-icons/fa'
-// import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 
 const ProjectDetailsInfo = ({ task, stringImage}) => {
     const teamWords = task.projectdetails.team.split(','); //separate text into individial words
@@ -14,7 +13,6 @@ const ProjectDetailsInfo = ({ task, stringImage}) => {
             <div className='col-12 col-md-4 col-xl-3 pt-5 pt-sm-5 pt-md-0'>
                 <div className='p-details-side-bg shadow-sm'>
                     <img src={projectimg} className='img-fluid' srcSet={stringImage} sizes="70vmin" alt="game project" />
-                    {/* <img src={projectimg} className='img-fluid' alt="game project" /> */}
 
                     <div className='p-2'>
                         <h2 className='p-2'> {task.type} </h2>

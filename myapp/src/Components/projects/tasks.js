@@ -59,7 +59,6 @@ const Tasks = ({ tasks, onViewed }) => {
                 </section>
 
                 {tasks.filter(task => task.reminder).map(task => (
-                    console.log(task),
                     <TaskDetails key={task.id} task={task} onViewed={onViewed} />
                 ))}
         </>

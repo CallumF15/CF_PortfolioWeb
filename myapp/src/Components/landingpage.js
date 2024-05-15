@@ -42,19 +42,6 @@ const Landingpage = ({ fullname }) => {
         // }
     }
 
-
-    // function handlePerson() {
-    //     setTimeout(() => {
-    //         alert(`You're name is ${personDetails.firstName + personDetails.secondName}`);
-    //     }, 5000);
-    // }
-
-    // function handlePerson2() {
-    //     setTimeout(() => {
-    //         alert(`You're name is ${setPersonDetails({ ...personDetails, firstName: 'new Value' })}`)
-    //     }, 5000);
-    // }
-
     return (
         <>
             <section className="py-5 text-left about-background">

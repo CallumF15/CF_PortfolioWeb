@@ -1,4 +1,3 @@
-
 const ProjectDetailsAbout = ({ task, stringImage }) => {
   const projectimg = process.env.PUBLIC_URL + task.image;
 

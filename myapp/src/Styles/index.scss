@@ -1,13 +1,4 @@
-// Custom.scss
-// Option A: Include all of Bootstrap
-// Include any default variable overrides here (though functions won't be available)
-
-//@import "../node_modules/bootstrap/scss/bootstrap";
 @import "~bootstrap/scss/bootstrap";
-// @import "../node_modules/bootstrap/scss/bootstrap";
-// @import "../node_modules/bootstrap/scss/bootstrap";
-// @import '../node_modules/bootstrap/scss/bootstrap.scss';
-
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 *,
@@ -68,8 +59,6 @@ h2, h3 {
 p{
   font-weight: 300;
 }
-
-
 
 .btn {
   display: inline-block;

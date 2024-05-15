@@ -40,13 +40,7 @@ app.use(express.static(path.join(__dirname, '..', '../myapp/src')));
 app.get("/", (req, res) => {
     // res.sendFile(path.join(__dirname , '..', '../myapp/public/index.html'));
     //    res.sendFile(path.join('../public/index.html' , {root:__dirname}));
-
-
-    res.send("dir: " + __dirname);
-});
-
-app.get("/test", (req, res) => {;
-      res.send("dir: " +__dirname);
+    //res.send("dir: " + __dirname);
 });
 
 // app.route('/book')

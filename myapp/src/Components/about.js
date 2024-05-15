@@ -4,7 +4,6 @@ const About = () => {
 
     return (
         <>
-            {/* <section className='About shadow-sm about-bg-pattern p-5 ' style={{ backgroundImage: `url(${process.env.PUBLIC_URL}images/about-bg.png)`}}></section> */}
             <section className='About about-bg-pattern p-5'>
 
                 <div className="about-custom-shape bg-light">
