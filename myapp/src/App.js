@@ -15,16 +15,14 @@ const App = () => {
 
   React.useEffect(() => {
     fetchTasks().then((tasks) => {
-      console.log("fetch tasks: ", tasks); //returns task object
+      //console.log("fetch tasks: ", tasks); //returns task object
       setTasks(tasks.tasks); //returns tasks as array
-
-      console.log("get valL: ", tasks.tasks);
+      //console.log("get valL: ", tasks.tasks);
     })
       .catch((error) => {
         console.error('Error setting state:', error);
       });
   }, []);
-
 
   async function fetchTasks() {
     try {
@@ -59,18 +57,19 @@ const App = () => {
     )
   };
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index, arr) => {
-            console.log(entry);
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }//else //uncomment if you want the animation to play everytime its visible
-            // entry.target.classList.remove('show');
-        })
-    });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index, arr) => {
+      //console.log(entry);
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }//else //uncomment if you want the animation to play everytime its visible
+      // entry.target.classList.remove('show');
+    })
+  });
 
-    const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((el) => observer.observe(el));
+  const hiddenElements = document.querySelectorAll('.hidden');
+  console.log( "list: ", hiddenElements)
+  hiddenElements.forEach((el) => observer.observe(el));
 
   // showButton = document.querySelector("dialog + button");
   //const closeButton = document.querySelector("dialog button");

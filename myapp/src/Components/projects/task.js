@@ -35,7 +35,7 @@ const Task = ({ task, onViewed, className }) => {     /* Curly brackets - destru
         };
         getElement();
     });
-
+    
     return (
         <>
             <div className={`col col-sm-6 ${className}`}>

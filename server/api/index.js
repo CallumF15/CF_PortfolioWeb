@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, '..', '../myapp/src')));
 
 //app.use('/bird', bird)
 
-//uncomment later a
+//uncomment later
 // app.use(cookieParser())
 // app.use(session({
 //   secret: "Shh, its a secret!",
@@ -35,7 +35,6 @@ app.use(express.static(path.join(__dirname, '..', '../myapp/src')));
 //   console.log('Accessing the secret section ...')
 //   next() // pass control to the next handler
 // })
-
 
 app.get("/", (req, res) => {
     // res.sendFile(path.join(__dirname , '..', '../myapp/public/index.html'));

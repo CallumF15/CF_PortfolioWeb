@@ -9,21 +9,21 @@ const Landingpage = ({ fullname }) => {
 
     const [personDetails, setPersonDetails] = useState(person); //user name to be displayed
     const [message, setMessage] = useState([{}]);
-    const [bird, setBird] = useState([{}]);
+    //const [bird, setBird] = useState([{}]);
 
     const AvatarPic = process.env.PUBLIC_URL + "/Images/avatar.png";
 
     let forename;
     let surname;
 
-    React.useEffect(() => {
-        fetchBird("bird");
+    // React.useEffect(() => {
+    //     fetchBird("bird");
 
-        fetch("/message")
-            .then((res) => res.json())
-            .then(message => setMessage(message))
-            .catch(error => console.log(error))
-    }, []);
+    //     fetch("/message")
+    //         .then((res) => res.json())
+    //         .then(message => setMessage(message))
+    //         .catch(error => console.log(error))
+    // }, []);
 
     (function splitNameHandler() {
         const myArray = fullname.split(" ");
@@ -31,16 +31,16 @@ const Landingpage = ({ fullname }) => {
         surname = myArray[1];
     })()
 
-    function fetchBird(url) {
-        // if(typeof url !== String){
-        //     console.log("not string")
-        // }else{
-        fetch("/" + url)
-            .then((res) => res.json())
-            .then(bird => setBird(bird))
-            .catch(error => console.log(error))
-        // }
-    }
+    // function fetchBird(url) {
+    //     // if(typeof url !== String){
+    //     //     console.log("not string")
+    //     // }else{
+    //     fetch("/" + url)
+    //         .then((res) => res.json())
+    //         .then(bird => setBird(bird))
+    //         .catch(error => console.log(error))
+    //     // }
+    // }
 
     return (
         <>
@@ -54,7 +54,7 @@ const Landingpage = ({ fullname }) => {
                                 {/* <span className=''> <b> {personDetails.firstName} </b> {personDetails.secondName} </span> */}
                                 <span className=''> <b> {forename} </b> {surname} </span>
                                 {/* delete this at somepoint -> text server message {message.message}  */}
-                                {bird.bird}
+                                {/* {bird.bird} */}
                             </h1>
                             <p className="lead">
                                 A graduate software developer with a passion for computer games and web development.

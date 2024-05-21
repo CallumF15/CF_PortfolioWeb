@@ -5,18 +5,13 @@ import TaskDetails from './taskDetails'
 const Tasks = ({ tasks, onViewed }) => {
     const [showMoreProjects, SetShowMoreProjects] = useState(false);
 
-    const maxNumberOfProjectsVis = 3; //maximum number of projects to be show at one time.
+    const maxNumberOfProjectsVis = 3; //maximum number of projects to be shown at one time.
 
     const defaultList = tasks.map((task, i, arr) => {
-        const arrLength = arr.length - 1;
-        
-        if (i >= arrLength){
-            console.log("length: "  + arr.length);
-            console.log("arr blah: "  + i);
-            return <Task key={task.id} task={task} onViewed={onViewed} className={'show'} />
-        }
+        if(i <= arr.length - 2)
+        return <Task key={task.id} task={task} onViewed={onViewed} className={'hidden'} />
         else
-            return <Task key={task.id} task={task} onViewed={onViewed} className={'hidden'} />
+        return <Task key={task.id} task={task} onViewed={onViewed} className={''} />
     })
 
     let projectList = defaultList;
@@ -47,13 +42,13 @@ const Tasks = ({ tasks, onViewed }) => {
 
                             <div className='container pt-5'>
                                 <div className="row row-cols-1 row-cols-md-3 g-4">
-                                    {console.log("TASK ELEMENT: ", tasks)}
+                                    {/* {console.log("TASK ELEMENT: ", tasks)} */}
                                     {projectList}
                                 </div>
 
                                 <div className='col-12 text-center p-5'>
                                     {
-                                        (totalNoOfProjects <= 3) ? "" :
+                                        (totalNoOfProjects <= maxNumberOfProjectsVis) ? "" :
                                             <button className='btn btn-lg' onClick={() => SetShowMoreProjects((prevState) => !prevState)}> {(showMoreProjects === false) ? "Show more" : "Show Less"}</button>
                                     }
                                 </div>
