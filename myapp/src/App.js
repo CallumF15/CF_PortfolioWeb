@@ -30,7 +30,15 @@ const App = () => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
+
       const data = await response.json();
+
+
+      const hiddenElements = document.querySelectorAll('.hidden');
+      console.log("list: ", hiddenElements)
+      hiddenElements.forEach((el) => observer.observe(el));
+
+
       return data;
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -67,9 +75,9 @@ const App = () => {
     })
   });
 
-  const hiddenElements = document.querySelectorAll('.hidden');
-  console.log( "list: ", hiddenElements)
-  hiddenElements.forEach((el) => observer.observe(el));
+  // const hiddenElements = document.querySelectorAll('.hidden');
+  // console.log( "list: ", hiddenElements)
+  // hiddenElements.forEach((el) => observer.observe(el));
 
   // showButton = document.querySelector("dialog + button");
   //const closeButton = document.querySelector("dialog button");
