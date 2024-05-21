@@ -33,12 +33,6 @@ const App = () => {
 
       const data = await response.json();
 
-
-      const hiddenElements = document.querySelectorAll('.hidden');
-      console.log("list: ", hiddenElements)
-      hiddenElements.forEach((el) => observer.observe(el));
-
-
       return data;
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -75,9 +69,11 @@ const App = () => {
     })
   });
 
-  // const hiddenElements = document.querySelectorAll('.hidden');
-  // console.log( "list: ", hiddenElements)
-  // hiddenElements.forEach((el) => observer.observe(el));
+  function test(){
+    const hiddenElements = document.querySelectorAll('.hidden');
+    console.log( "list: ", hiddenElements)
+    hiddenElements.forEach((el) => observer.observe(el));
+  }
 
   // showButton = document.querySelector("dialog + button");
   //const closeButton = document.querySelector("dialog button");
@@ -99,6 +95,7 @@ const App = () => {
       <About />
       {/* {console.log("HIT element: ", tasks)} */}
       <Tasks tasks={tasks} onViewed={toggleTaskViewed} />
+      {test()}
       <Footer fullname={fullname} />
     </React.Fragment>
   )
