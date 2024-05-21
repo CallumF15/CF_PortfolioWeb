@@ -1,18 +1,39 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Task from './task'
 import TaskDetails from './taskDetails'
 
 const Tasks = ({ tasks, onViewed }) => {
     const [showMoreProjects, SetShowMoreProjects] = useState(false);
 
+    //Runs on the first render
+    //And any time any dependency value changes
+    useEffect(() => {
+        console.log('re-render on button click')
+        console.log(showMoreProjects)
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index, arr) => {
+              //console.log(entry);
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+              }//else //uncomment if you want the animation to replay everytime its visible
+              // entry.target.classList.remove('show');
+            })
+          });
+        
+          const hiddenElements = document.querySelectorAll('.hidden');
+          console.log( "list: ", hiddenElements)
+          hiddenElements.forEach((el) => observer.observe(el));
+
+    }, [showMoreProjects])
+
     const maxNumberOfProjectsVis = 3; //maximum number of projects to be shown at one time.
- 
+
     const defaultList = tasks.map((task, i, arr) => {
-        if(i <= arr.length - 2){
-          
+        if (i <= arr.length - 2) {
             return <Task key={task.id} task={task} onViewed={onViewed} className={'hidden'} />
-        }else
-        return <Task key={task.id} task={task} onViewed={onViewed} className={''} />
+        } else
+            return <Task key={task.id} task={task} onViewed={onViewed} className={'hidden'} />
     })
 
     let projectList = defaultList;

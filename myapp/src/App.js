@@ -13,6 +13,7 @@ const App = () => {
 
   const fullname = "Callum Flannagan";
 
+  //useEffect is a React Hook that lets you synchronize a component with an external system.
   React.useEffect(() => {
     fetchTasks().then((tasks) => {
       //console.log("fetch tasks: ", tasks); //returns task object
@@ -22,22 +23,23 @@ const App = () => {
       .catch((error) => {
         console.error('Error setting state:', error);
       });
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index, arr) => {
-          //console.log(entry);
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-          }//else //uncomment if you want the animation to replay everytime its visible
-          // entry.target.classList.remove('show');
-        })
-      });
-    
-      const hiddenElements = document.querySelectorAll('.hidden');
-      console.log( "list: ", hiddenElements)
-      hiddenElements.forEach((el) => observer.observe(el));
-
   }, []);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index, arr) => {
+        //console.log(entry);
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }//else //uncomment if you want the animation to replay everytime its visible
+        // entry.target.classList.remove('show');
+      })
+    });
+  
+    const hiddenElements = document.querySelectorAll('.hidden');
+    console.log( "list: ", hiddenElements)
+    hiddenElements.forEach((el) => observer.observe(el));
+  })
 
   async function fetchTasks() {
     try {
@@ -73,6 +75,21 @@ const App = () => {
     })
     )
   };
+
+  
+  // const observer = new IntersectionObserver((entries) => {
+  //   entries.forEach((entry, index, arr) => {
+  //     //console.log(entry);
+  //     if (entry.isIntersecting) {
+  //       entry.target.classList.add('show');
+  //     }//else //uncomment if you want the animation to replay everytime its visible
+  //     // entry.target.classList.remove('show');
+  //   })
+  // });
+
+  // const hiddenElements = document.querySelectorAll('.hidden');
+  // console.log( "list: ", hiddenElements)
+  // hiddenElements.forEach((el) => observer.observe(el));
 
   // showButton = document.querySelector("dialog + button");
   //const closeButton = document.querySelector("dialog button");
