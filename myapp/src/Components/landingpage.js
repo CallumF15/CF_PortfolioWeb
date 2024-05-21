@@ -47,9 +47,9 @@ const Landingpage = ({ fullname }) => {
             <section className="py-5 text-left about-background">
                 <div className="container">
                     <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 d-flex justify-content-center align-items-center">
-                        <div className="col pt-5 pt-sm-0 py-sm-3 order-0 mx-auto text-center text-sm-start">
+                        <div className="col pt-5 pt-sm-0 py-sm-3 order-0 mx-auto text-center text-sm-start hidden">
 
-                            <h1 className="fw-light">
+                            <h1 className="fw-light ">
                                 <span> {personDetails.message} </span> <br />
                                 {/* <span className=''> <b> {personDetails.firstName} </b> {personDetails.secondName} </span> */}
                                 <span className=''> <b> {forename} </b> {surname} </span>
@@ -63,7 +63,7 @@ const Landingpage = ({ fullname }) => {
                             <a href="mailto: CallumFlannagan@hotmail.com?subject=Portfolio%Feedback" className="btn btn-secondary btn-lg my-2">Contact me</a>
                         </div>
 
-                        <div className="col order-1 py-sm-2 d-flex justify-content-center align-items-center">
+                        <div className="col order-1 py-sm-2 d-flex justify-content-center align-items-center hidden">
                             {/* <img src={mePic} className="img-fluid" alt="me" /> */}
 
                             <img src={AvatarPic} className="img-fluid" alt="me" />

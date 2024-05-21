@@ -59,6 +59,19 @@ const App = () => {
     )
   };
 
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index, arr) => {
+            console.log(entry);
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }//else //uncomment if you want the animation to play everytime its visible
+            // entry.target.classList.remove('show');
+        })
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+
   // showButton = document.querySelector("dialog + button");
   //const closeButton = document.querySelector("dialog button");
 

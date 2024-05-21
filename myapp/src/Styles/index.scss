@@ -320,6 +320,11 @@ footer {
   }
 }
 
+#taskDetails{
+  //scroll-margin-top: calc(3rem + 10px); //check the padding for TaskDetails and other divs and make it a global var
+  scroll-margin-top: 5rem;
+}
+
 /* iframe taskDetails -> Unity Game */
 .iframe-style {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
@@ -327,6 +332,28 @@ footer {
   padding: 40px;
   border-radius: 15px;
 }
+
+.hidden{
+  opacity: 0;
+  filter: blur(2x);
+  transform: translateX(-100%);
+  transition: all 3s;
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion) {
+  /* styles to apply if a user's device settings are set to reduced motion */
+  .hidden {
+    transition: none;
+  }
+}
+
+
 
 /*****************************/
 /*********** clouds **********/
