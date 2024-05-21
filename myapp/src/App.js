@@ -11,6 +11,7 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
   const [modal, setModal] = useState(false);
 
+
   const fullname = "Callum Flannagan";
 
   React.useEffect(() => {
@@ -22,6 +23,21 @@ const App = () => {
       .catch((error) => {
         console.error('Error setting state:', error);
       });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index, arr) => {
+          //console.log(entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }//else //uncomment if you want the animation to replay everytime its visible
+          // entry.target.classList.remove('show');
+        })
+      });
+    
+      const hiddenElements = document.querySelectorAll('.hidden');
+      console.log( "list: ", hiddenElements)
+      hiddenElements.forEach((el) => observer.observe(el));
+
   }, []);
 
   async function fetchTasks() {
@@ -64,16 +80,17 @@ const App = () => {
       //console.log(entry);
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
-      }//else //uncomment if you want the animation to play everytime its visible
+      }//else //uncomment if you want the animation to replay everytime its visible
       // entry.target.classList.remove('show');
     })
   });
 
-  function test(){
-    const hiddenElements = document.querySelectorAll('.hidden');
-    console.log( "list: ", hiddenElements)
-    hiddenElements.forEach((el) => observer.observe(el));
-  }
+  const hiddenElements = document.querySelectorAll('.hidden');
+  console.log( "list: ", hiddenElements)
+  hiddenElements.forEach((el) => observer.observe(el));
+
+
+ 
 
   // showButton = document.querySelector("dialog + button");
   //const closeButton = document.querySelector("dialog button");
@@ -94,8 +111,8 @@ const App = () => {
       <LandingPage fullname={fullname} />
       <About />
       {/* {console.log("HIT element: ", tasks)} */}
-      <Tasks tasks={tasks} onViewed={toggleTaskViewed} />
-      {test()}
+      <Tasks tasks={tasks} onViewed={toggleTaskViewed}/>
+
       <Footer fullname={fullname} />
     </React.Fragment>
   )

@@ -6,11 +6,12 @@ const Tasks = ({ tasks, onViewed }) => {
     const [showMoreProjects, SetShowMoreProjects] = useState(false);
 
     const maxNumberOfProjectsVis = 3; //maximum number of projects to be shown at one time.
-
+ 
     const defaultList = tasks.map((task, i, arr) => {
-        if(i <= arr.length - 2)
-        return <Task key={task.id} task={task} onViewed={onViewed} className={'hidden'} />
-        else
+        if(i <= arr.length - 2){
+          
+            return <Task key={task.id} task={task} onViewed={onViewed} className={'hidden'} />
+        }else
         return <Task key={task.id} task={task} onViewed={onViewed} className={''} />
     })
 
