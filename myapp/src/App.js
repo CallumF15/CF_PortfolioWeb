@@ -25,25 +25,10 @@ const App = () => {
       });
   }, []);
 
-  React.useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index, arr) => {
-        //console.log(entry);
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }//else //uncomment if you want the animation to replay everytime its visible
-        // entry.target.classList.remove('show');
-      })
-    });
-  
-    const hiddenElements = document.querySelectorAll('.hidden');
-    console.log( "list: ", hiddenElements)
-    hiddenElements.forEach((el) => observer.observe(el));
-  })
-
   async function fetchTasks() {
     try {
-      const response = await fetch('https://callumflannagan-server.vercel.app/tasks');
+      const response = await fetch('/tasks');
+      //const response = await fetch('https://callumflannagan-server.vercel.app/tasks');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -75,21 +60,6 @@ const App = () => {
     })
     )
   };
-
-  
-  // const observer = new IntersectionObserver((entries) => {
-  //   entries.forEach((entry, index, arr) => {
-  //     //console.log(entry);
-  //     if (entry.isIntersecting) {
-  //       entry.target.classList.add('show');
-  //     }//else //uncomment if you want the animation to replay everytime its visible
-  //     // entry.target.classList.remove('show');
-  //   })
-  // });
-
-  // const hiddenElements = document.querySelectorAll('.hidden');
-  // console.log( "list: ", hiddenElements)
-  // hiddenElements.forEach((el) => observer.observe(el));
 
   // showButton = document.querySelector("dialog + button");
   //const closeButton = document.querySelector("dialog button");

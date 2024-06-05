@@ -10,22 +10,26 @@ const Tasks = ({ tasks, onViewed }) => {
     useEffect(() => {
         console.log('re-render on button click')
         console.log(showMoreProjects)
+        triggerAnimation();
+    }, [showMoreProjects])
 
+    useEffect(() => {
+         triggerAnimation();
+      })
+
+    function triggerAnimation(){
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index, arr) => {
-              //console.log(entry);
               if (entry.isIntersecting) {
                 entry.target.classList.add('show');
-              }//else //uncomment if you want the animation to replay everytime its visible
-              // entry.target.classList.remove('show');
+              }
             })
           });
         
           const hiddenElements = document.querySelectorAll('.hidden');
           console.log( "list: ", hiddenElements)
           hiddenElements.forEach((el) => observer.observe(el));
-
-    }, [showMoreProjects])
+    }
 
     const maxNumberOfProjectsVis = 3; //maximum number of projects to be shown at one time.
 

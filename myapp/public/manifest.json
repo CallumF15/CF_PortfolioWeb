@@ -1,8 +1,7 @@
 {
-  "short_name": "Callum Flannagan",
-  "name": "Portfolio",
+  "short_name": "CF Portfolio",
+  "name": "Callum Flannagan Portfolio",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "lang": "en"
 }

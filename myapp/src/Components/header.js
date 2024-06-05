@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle'
 //Top part of webpage - displays name/logo
 const Header = ({ fullname }) => {
     const githubLink = "http://github.com/CallumF15";
-    const linkedInLink = "/#";
+    const linkedInLink = "https://www.linkedin.com/in/callum-flannagan-09ba9a132/";
 
     return (
         <>
@@ -40,7 +40,7 @@ const Header = ({ fullname }) => {
                                     spy={true}
                                     smooth={true}
                                     offset={-80}
-                                    duration={500}
+                                    duration={100}
                                     className='nav-link'>
 
                                     About
@@ -54,7 +54,7 @@ const Header = ({ fullname }) => {
                                     spy={true}
                                     smooth={true}
                                     offset={-90}
-                                    duration={500}
+                                    duration={100}
                                     className='nav-link'>
 
                                     Projects
@@ -69,13 +69,13 @@ const Header = ({ fullname }) => {
                                 </li>
 
                                 <li className="nav-item social-colour me-1">
-                                    <a className="nav-link waves-effect waves-light" href={linkedInLink}>
+                                    <a className="nav-link waves-effect waves-light" href={linkedInLink} target="_blank" rel="noreferrer">
                                         <FaLinkedinIn />
                                     </a>
                                 </li>
 
                                 <li className="nav-item social-colour">
-                                    <a className="nav-link waves-effect waves-light" href={githubLink}>
+                                    <a className="nav-link waves-effect waves-light" href={githubLink} target="_blank" rel="noreferrer"> 
                                         <FaGithub />
                                     </a>
                                 </li>
