@@ -304,8 +304,8 @@ footer {
   }
 
   h4 {
-    font-size: 1.2rem;
-    font-weight: 310;
+    font-size: 1.3rem;
+    font-weight: 330;
   }
 }
 
@@ -314,6 +314,14 @@ footer {
 //project details sidebar (team/audience)
 .p-details {
   background: var(--p-details-bg);
+  // background-image: url('../../public/Images/tilepattern.png');
+
+  // //background-image: url('../../public/Images/fancy-cushion.webp');
+  // background-repeat: repeat;
+  
+
+
+
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
   .social-colour {
