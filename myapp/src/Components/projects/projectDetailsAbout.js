@@ -24,11 +24,12 @@ const ProjectDetailsAbout = ({ task, stringImage, btnSetState, btnState }) => {
 
           {/* <img src={projectimg} className="card-img-top project-img-height" srcSet={stringImage} sizes="70vmin" alt="game project" /> */}
 
-          <div className='p-5'>
-            <div className='paragraph'>
-              <h2> About this project </h2>
-              <hr />
-              <div className='px-2'> {/* Indent paragraph */}
+          <div className=''>
+              <div className='px-5 pt-5'> {/* Indent paragraph */}
+
+                <h2> About this project </h2>
+                <hr />
+
                 <p>
                   {desc}
                 </p>
@@ -43,31 +44,32 @@ const ProjectDetailsAbout = ({ task, stringImage, btnSetState, btnState }) => {
                   {desc2}
                 </p> */}
 
+              </div>
+
+              <div className='px-3 px-sm-5 pb-3'>
                 {
                   (instructions !== "") ?
                     <>
                       <h2 className='mt-5'> Instructions </h2> <hr />
                       {parsedInstructions}
 
-                      <hr />
+                     
                     </>
                     :
                     (<h2 className='mt-5'>  </h2>)
                 }
-
               </div>
             </div>
-          </div>
 
+        {/* add instructions to play game into below code  */}
+        {
+          (task.gamelink !== "") ?
+            <div className="d-none d-md-block text-center pb-2 px-2">
+              <button className='btn btn-sm' style={{ width: '50%' }} onClick={btnSetState}> {(btnState === true) ? 'Close Game' : 'Play Game'} </button>
+            </div>
+            : ""
+        }
 
-          {/* add instructions to play game into below code  */}
-          {
-            (task.link !== "") ?
-              <div className="d-none d-md-block text-center pb-2 px-2">
-                <button className='btn btn-sm' style={{ width: '50%' }} onClick={btnSetState}> {(btnState === true) ? 'Close Game' : 'Play Game'} </button>
-              </div>
-              : ""
-          }
         </div>
       </div>
     </>

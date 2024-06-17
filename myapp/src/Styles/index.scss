@@ -252,11 +252,25 @@ dialog::backdrop {
 /*****************************/
 /****** Project Details & footer ******/
 /*****************************/
-.navbar,
+
+.navbar {
+  .social-colour {
+    &:hover {
+      background-color: var(--header-fa);
+    }
+  }
+}
+
 footer {
   .social-colour {
     &:hover {
       background-color: var(--header-fa);
+    }
+  }
+
+  .navbar,
+  footer {
+    .social-colour {
       border-radius: 5%;
     }
   }
@@ -264,12 +278,19 @@ footer {
 
 //project details about
 #taskDetails ol {
+
+  padding-left: 1rem;
+
   li {
     list-style-type: none;
     line-height: 1rem;
 
-    :not(.first){
-      h3, h4, p{
+
+    :not(.first) {
+
+      h3,
+      h4,
+      p {
         display: inline;
         vertical-align: top;
         line-height: 1.8rem;
@@ -287,6 +308,8 @@ footer {
     font-weight: 310;
   }
 }
+
+.about-instructions {}
 
 //project details sidebar (team/audience)
 .p-details {

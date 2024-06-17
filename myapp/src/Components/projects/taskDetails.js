@@ -69,11 +69,21 @@ const TaskDetails = ({ task }) => {
                     {generateClouds()}
                 </div> */}
 
-                <article className="container project-innerdetails shadow-sm bg-light">
+                <article className="container project-innerdetails">
                     <div className='row row-col-1 row-col-md-2 display-flex'>
-                        <div className="d-flex justify-content-center">
+                    
+                        {/* <div className="d-flex justify-content-center">
                             <h2 className="display-4 fw-bold title-underline text-center pt-5 pb-2 mb-5"> {task.name} </h2>
+                            <div className="text-underline"></div>
+                        </div> */}
+
+                        <div className="mb-5">
+                            <h2 className="display-4 fw-bold text-center"> {task.name} </h2>
+                            <div className="text-underline"></div>
                         </div>
+
+
+                     
 
                         <ProjectDetailsAbout task={task} stringImage={stringImage} btnSetState={toggleGame} btnState={setGame} />
                         <ProjectDetailsInfo task={task} stringImage={stringImage} />
@@ -83,10 +93,10 @@ const TaskDetails = ({ task }) => {
                         {/* Unity Game here */}
                         <div className="col-12 text-center d-none d-md-block mt-5 pl-5 pr-5 p-details-text-bg">
                             {
-                                (task.link.length !== 0) ? (setGame === true) ?
+                                (task.gamelink.length !== 0) ? (setGame === true) ?
                                     <div className="text-center py-3 gameScroll" id="unityGame">
                                         <h2> {task.name} </h2>
-                                        <iframe title={task.name} className="" src={task.link} width="100%" height="713" scrolling="no"></iframe>
+                                        <iframe title={task.name} className="" src={task.gamelink} width="100%" height="713" scrolling="no"></iframe>
 
                                         <button className='btn btn-sm' style={{ width: '50%' }} onClick={setShowGame}> {(setGame === true) ? 'Close Game' : 'Play Game'} </button>
                                     </div>

@@ -4,7 +4,8 @@
       "id": 1,
       "type": "University Project",
       "name": "Super Hero Game",
-      "link": "../SuperHeroGame/game.html",
+      "repolink": "https://github.com/CallumF15/IP3_2D_CF",
+      "gamelink": "../SuperHeroGame/game.html",
       "image": "Images/flygame.jpg",
       "projectabout": {
         "desc": "The concept for the game was simple. Play as a superhero soaring through the sky whilst in the pursuit of an evil villain who is relentlessly targeting you whilst you collect coins and power-ups to aid you in your battle to defeat him.  ",
@@ -21,11 +22,12 @@
       "id": 2,
       "type": "University Project",
       "name": "Procedural Content Generation",
-      "link": "",
+      "repolink": "",
+      "gamelink": "",
       "image": "Images/PCG-game.jpg",
       "projectabout": {
-        "desc": "A 2D game that utilizes a procedural content algorithm (Perlin Noise) to generate the world combined with collecting player data such as how often they perform certain actions, how many times they die and how long it takes them to finish a level to determine how best to generate the next world for them.",
-        "desc2": "",
+        "desc": "A 2D game that utilizes a procedural content algorithm known as Perlin Noise to generate unique levels for the user each time. This was combined with collecting player data such as how often they perform certain actions and other data such as the number of times they die and how long it takes them to finish a level to determine how best to generate the next world for them. Play tests were conducted by myself to pull in user data from multiple participants allowing me to see how the terrain generator reacted to different users. A survey was carried out after each user’s playtest to assess whether they thought the levels generated for them reflected their play style. The data was then analysed, and adjustments were made to the algorithm to improve the terrain generation.",
+        "desc2": "The game only has the basics of movement implemented to transverse the environment. Future goals for the project were to add in enemy placement systems, power-ups and collectibles that worked in tandem with the terrain generation and data-collection.",
         "instructions": ""
       },
       "projectdetails": {
@@ -38,7 +40,8 @@
       "id": 3,
       "type": "Personal Project",
       "name": "Mobile Platformer",
-      "link": "",
+      "repolink": "https://github.com/CallumF15/PlatformerGame",
+      "gamelink": "",
       "image": "Images/PlatformerGame.jpg",
       "projectabout": {
         "desc": "A 2D endless jumping platformer game being designed for mobile devices where the user must time their jumps to land on the next platform, building up their score and seeing how far they can get before they miss a platform, and their current attempt ends.",
@@ -55,7 +58,8 @@
       "id": 4,
       "type": "Job Project",
       "name": "Website Test 19394949",
-      "link": "",
+      "repolink": "",
+      "gamelink": "",
       "image": "Images/flygame.jpg",
       "projectabout": {
         "desc": "A portfolio website bgko rog rgko kgdpokgop gkpkgop gdgk  ",
