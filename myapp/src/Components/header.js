@@ -1,19 +1,24 @@
 import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa'
 import { Link, animateScroll as scroll } from 'react-scroll'
 import { IconContext } from 'react-icons/lib'
-import 'bootstrap/dist/js/bootstrap.bundle'
+import 'bootstrap/dist/js/bootstrap.bundle' 
 
 //Top part of webpage - displays name/logo
 const Header = ({ fullname }) => {
     const githubLink = "http://github.com/CallumF15";
     const linkedInLink = "https://www.linkedin.com/in/callum-flannagan-09ba9a132/";
 
+    const logo = process.env.PUBLIC_URL + "/Images/cf-logo.png";
+
     return (
         <>
-            <nav className="navbar navbar-default sticky-top navbar-expand-lg navbar-light nav-box p-4">
+            <nav className="navbar navbar-default sticky-top navbar-expand-lg navbar-light nav-box">
                 <div className="container">
                     <a className="navbar-brand" href="/#">
                         {fullname}
+
+                        <img className='logo' src={logo} alt=""></img>
+
                         {/* <div class="svg-wrapper">
                             <svg>
                                 <rect class="shape" height="50" width="100%" />
