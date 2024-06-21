@@ -65,6 +65,7 @@ const TaskDetails = ({ task }) => {
 
             <section className="p-details pb-5 pt-5" id="taskDetails">
 
+       
                 {/* <div className="cloud-test">
                     {generateClouds()}
                 </div> */}
