@@ -26,7 +26,7 @@ body {
   --header-fa: rgb(172, 172, 172);
 
   //about
-  --about-bg: rgb(208, 240, 255);
+  --about-bg: rgb(232, 246, 255);
 
   //project
 
@@ -143,6 +143,10 @@ dialog::backdrop {
   max-height: 400px;
 }
 
+.project-title {
+  background-color: rgba(255, 255, 255, .95);
+}
+
 /*Nav Social Media  */
 .nav-box {
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
@@ -162,7 +166,8 @@ dialog::backdrop {
   animation: gradient 10s ease infinite;
   position: relative;
   z-index: 10;
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  //box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  box-shadow: rgba(33, 35, 38, 0.5) 0px 10px 10px -10px;
 
   img {
     height: 60%;
@@ -216,6 +221,7 @@ dialog::backdrop {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--about-bg);
+
   // -webkit-transform: scaleX(-1); //flip image
   // transform: scaleX(-1); //flip image
 }
@@ -238,6 +244,7 @@ dialog::backdrop {
 
   .shape-fill {
     fill: var(--about-bg);
+
     filter: drop-shadow(-15px 4px 6px rgba(0, 0, 0, .1))
   }
 }
@@ -255,7 +262,7 @@ dialog::backdrop {
 
 .navbar {
 
-  .logo{
+  .logo {
     width: 80px;
     height: 80px;
   }
@@ -361,7 +368,11 @@ footer {
 }
 
 .p-details-side-bg {
-  background-color: #eee;
+  background-color: #fff;
+
+  .bg-light {
+    background-color: rgb(225, 225, 225) !important;
+  }
 }
 
 .p-details-text-bg {
@@ -603,7 +614,9 @@ $value: random-position();
 
 
 //Responsive smaller device
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {}
+
+@include media-breakpoint-down(sm) {
 
   //testing LANDING PAGE swapping so other col is top for mobile
   .order-0 {
@@ -615,4 +628,12 @@ $value: random-position();
   }
 }
 
-;
+@include media-breakpoint-down(md) {
+  nav {
+    li {
+      padding-left: 10px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {}

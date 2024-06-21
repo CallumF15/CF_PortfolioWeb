@@ -8,16 +8,16 @@ const Header = ({ fullname }) => {
     const githubLink = "http://github.com/CallumF15";
     const linkedInLink = "https://www.linkedin.com/in/callum-flannagan-09ba9a132/";
 
-    const logo = process.env.PUBLIC_URL + "/Images/cf-logo.png";
+    // const logo = process.env.PUBLIC_URL + "/Images/cf-logo.png";
 
     return (
         <>
-            <nav className="navbar navbar-default sticky-top navbar-expand-lg navbar-light nav-box">
+            <nav className="navbar navbar-default sticky-top navbar-expand-lg navbar-light nav-box p-4">
                 <div className="container">
                     <a className="navbar-brand" href="/#">
                         {fullname}
 
-                        <img className='logo' src={logo} alt=""></img>
+                        {/* <img className='logo' src={logo} alt=""></img> */}
 
                         {/* <div class="svg-wrapper">
                             <svg>

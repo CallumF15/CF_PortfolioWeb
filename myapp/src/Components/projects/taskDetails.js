@@ -71,19 +71,24 @@ const TaskDetails = ({ task }) => {
 
                 <article className="container project-innerdetails">
                     <div className='row row-col-1 row-col-md-2 display-flex'>
-                    
+
                         {/* <div className="d-flex justify-content-center">
                             <h2 className="display-4 fw-bold title-underline text-center pt-5 pb-2 mb-5"> {task.name} </h2>
                             <div className="text-underline"></div>
                         </div> */}
 
-                        <div className="mb-5">
-                            <h2 className="display-4 fw-bold text-center"> {task.name} </h2>
-                            <div className="text-underline"></div>
+                        <div className="project-title shadow-sm pb-4 mb-5">
+                                <h2 className="display-4 fw-bold text-center"> {task.name} </h2>
+                                <div className="text-underline"></div>
                         </div>
 
+                        {/* <div className="mb-5">
+                            <h2 className="display-4 fw-bold text-center"> {task.name} </h2>
+                            <div className="text-underline"></div>
+                        </div> */}
 
-                     
+
+
 
                         <ProjectDetailsAbout task={task} stringImage={stringImage} btnSetState={toggleGame} btnState={setGame} />
                         <ProjectDetailsInfo task={task} stringImage={stringImage} />
