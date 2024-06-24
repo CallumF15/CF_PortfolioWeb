@@ -53,24 +53,6 @@
         "targetAudience": "All audiences",
         "techUsed": "C#, Unity"
       }
-    },
-    {
-      "id": 4,
-      "type": "Job Project",
-      "name": "Website Test 19394949",
-      "repolink": "",
-      "gamelink": "",
-      "image": "Images/flygame.jpg",
-      "projectabout": {
-        "desc": "A portfolio website bgko rog rgko kgdpokgop gkpkgop gdgk  ",
-        "desc2": "",
-        "instructions": ""
-      },
-      "projectdetails": {
-        "team": "Programmer",
-        "targetAudience": "All audiences",
-        "techUsed": "C#, Unity"
-      }
     }
   ]
 }
