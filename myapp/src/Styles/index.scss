@@ -38,6 +38,8 @@ body {
   --clr-footer: hsl(212 98% 37%);
   --footer-fa: rgb(172, 172, 172);
 
+  --opacity: .6;
+
   //box-shadows
   // --box-shadow: 
   // --bottom-shadow:
@@ -144,7 +146,8 @@ dialog::backdrop {
 }
 
 .project-title {
-  background-color: rgba(255, 255, 255, .95);
+  background-color: rgba(255, 255, 255, .7);
+  border: 1px solid rgba(213, 213, 213, 0.7);
 }
 
 /*Nav Social Media  */
@@ -159,15 +162,27 @@ dialog::backdrop {
 /*****************************/
 /*****************************/
 
-.about-background {
-  /*adds a gradient to background */
-  background: linear-gradient(-25deg, #ff6a3d, #29d4ff, #11ff9c, #fd1b1b);
-  background-size: 600% 600%;
-  animation: gradient 10s ease infinite;
+.lp-background {
+  background-image: url('../../public/Images/bg2.jpg');
+  background-size: cover;
   position: relative;
   z-index: 10;
   //box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   box-shadow: rgba(33, 35, 38, 0.5) 0px 10px 10px -10px;
+
+  .lp-layer {
+  /*adds a gradient to background */
+    background: linear-gradient(-25deg, rgba(255, 106, 61, var(--opacity)), rgba(41, 212, 255, var(--opacity)), rgba(17, 255, 156, var(--opacity)), rgba(253, 27, 27, var(--opacity)));
+    animation: gradient 10s ease infinite;
+    background-size: 600% 600%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
 
   img {
     height: 60%;
@@ -326,8 +341,23 @@ footer {
 //project details sidebar (team/audience)
 .p-details {
   background: var(--p-details-bg);
-  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='69.283' height='40' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 1)'/><path d='M46.189-20L57.736 0M46.189 20l11.547 20m-46.189 0l11.547 20M11.547 0l11.547 20m40.415 30H40.415M28.868 30H5.774m23.094-40H5.774m57.735 20H40.415m0 20L28.868 50m11.547-60L28.868 10m46.188 0L63.509 30M5.774 10L-5.773 30m75.056 10H46.189L34.64 20 46.19 0h23.094C73.13 6.667 76.98 13.333 80.83 20zM57.736 60H34.64L23.094 40l11.547-20h23.095c3.848 6.667 7.698 13.333 11.547 20L57.736 60zm0-40H34.64L23.094 0l11.547-20h23.095L69.283 0c-3.87 6.7-8.118 14.06-11.547 20zM34.64 60H11.547L0 40l11.547-20h23.094L46.19 40 34.64 60zm0-40H11.547L0 0l11.547-20h23.094L46.19 0 34.64 20zM23.094 40H0l-5.773-10-5.774-10L0 0h23.094l11.547 20-11.547 20z'  stroke-width='1' stroke='hsla(259, 0%, 58%, 0.58)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
-  background-repeat: repeat;
+  // background-image: url('../../public/Images/tilepattern.png');
+  background-image: url('../../public/Images/bg.jpg');
+  background-size: 100% 100%;
+  //box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+
+  // background-size: 800% 800%;
+  // background-repeat: repeat;
+
+  // background-color: #0EFFFB;
+  // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3CradialGradient id='a' cx='500' cy='500' r='60%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%230EFFFB'/%3E%3Cstop offset='1' stop-color='%232C9799'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='500' cy='500' r='70%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2393FFEC' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%2393FFEC' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1000' height='1000'/%3E%3Cg fill='none' stroke='%2339FFF6' stroke-width='2' stroke-miterlimit='10' stroke-opacity='.5'%3E%3Ccircle cx='500' cy='500' r='725'/%3E%3Ccircle cx='500' cy='500' r='700'/%3E%3Ccircle cx='500' cy='500' r='675'/%3E%3Ccircle cx='500' cy='500' r='650'/%3E%3Ccircle cx='500' cy='500' r='625'/%3E%3Ccircle cx='500' cy='500' r='600'/%3E%3Ccircle cx='500' cy='500' r='575'/%3E%3Ccircle cx='500' cy='500' r='550'/%3E%3Ccircle cx='500' cy='500' r='525'/%3E%3Ccircle cx='500' cy='500' r='500'/%3E%3Ccircle cx='500' cy='500' r='475'/%3E%3Ccircle cx='500' cy='500' r='450'/%3E%3Ccircle cx='500' cy='500' r='425'/%3E%3Ccircle cx='500' cy='500' r='400'/%3E%3Ccircle cx='500' cy='500' r='375'/%3E%3Ccircle cx='500' cy='500' r='350'/%3E%3Ccircle cx='500' cy='500' r='325'/%3E%3Ccircle cx='500' cy='500' r='300'/%3E%3Ccircle cx='500' cy='500' r='275'/%3E%3Ccircle cx='500' cy='500' r='250'/%3E%3Ccircle cx='500' cy='500' r='225'/%3E%3Ccircle cx='500' cy='500' r='200'/%3E%3Ccircle cx='500' cy='500' r='175'/%3E%3Ccircle cx='500' cy='500' r='150'/%3E%3Ccircle cx='500' cy='500' r='125'/%3E%3Ccircle cx='500' cy='500' r='100'/%3E%3Ccircle cx='500' cy='500' r='75'/%3E%3Ccircle cx='500' cy='500' r='50'/%3E%3Ccircle cx='500' cy='500' r='25'/%3E%3C/g%3E%3Crect fill-opacity='.5' fill='url(%23b)' width='1000' height='1000'/%3E %3C/svg%3E");
+  // background-attachment: fixed;
+  // background-size: cover;
+
+  // background-color: #2EDADD;
+  // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3CradialGradient id='a' cx='500' cy='500' r='50%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232EDADD'/%3E%3Cstop offset='1' stop-color='%23134444'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='500' cy='500' r='60%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%233EF9FF' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%233EF9FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1000' height='1000'/%3E%3Cg fill='none' stroke='%232AF5FF' stroke-width='1' stroke-miterlimit='10' stroke-opacity='.3'%3E%3Crect x='12.5' y='12.5' width='975' height='975'/%3E%3Crect x='25' y='25' width='950' height='950'/%3E%3Crect x='37.5' y='37.5' width='925' height='925'/%3E%3Crect x='50' y='50' width='900' height='900'/%3E%3Crect x='62.5' y='62.5' width='875' height='875'/%3E%3Crect x='75' y='75' width='850' height='850'/%3E%3Crect x='87.5' y='87.5' width='825' height='825'/%3E%3Crect x='100' y='100' width='800' height='800'/%3E%3Crect x='112.5' y='112.5' width='775' height='775'/%3E%3Crect x='125' y='125' width='750' height='750'/%3E%3Crect x='137.5' y='137.5' width='725' height='725'/%3E%3Crect x='150' y='150' width='700' height='700'/%3E%3Crect x='162.5' y='162.5' width='675' height='675'/%3E%3Crect x='175' y='175' width='650' height='650'/%3E%3Crect x='187.5' y='187.5' width='625' height='625'/%3E%3Crect x='200' y='200' width='600' height='600'/%3E%3Crect x='212.5' y='212.5' width='575' height='575'/%3E%3Crect x='225' y='225' width='550' height='550'/%3E%3Crect x='237.5' y='237.5' width='525' height='525'/%3E%3Crect x='250' y='250' width='500' height='500'/%3E%3Crect x='262.5' y='262.5' width='475' height='475'/%3E%3Crect x='275' y='275' width='450' height='450'/%3E%3Crect x='287.5' y='287.5' width='425' height='425'/%3E%3Crect x='300' y='300' width='400' height='400'/%3E%3Crect x='312.5' y='312.5' width='375' height='375'/%3E%3Crect x='325' y='325' width='350' height='350'/%3E%3Crect x='337.5' y='337.5' width='325' height='325'/%3E%3Crect x='350' y='350' width='300' height='300'/%3E%3Crect x='362.5' y='362.5' width='275' height='275'/%3E%3Crect x='375' y='375' width='250' height='250'/%3E%3Crect x='387.5' y='387.5' width='225' height='225'/%3E%3Crect x='400' y='400' width='200' height='200'/%3E%3Crect x='412.5' y='412.5' width='175' height='175'/%3E%3Crect x='425' y='425' width='150' height='150'/%3E%3Crect x='437.5' y='437.5' width='125' height='125'/%3E%3Crect x='450' y='450' width='100' height='100'/%3E%3Crect x='462.5' y='462.5' width='75' height='75'/%3E%3Crect x='475' y='475' width='50' height='50'/%3E%3Crect x='487.5' y='487.5' width='25' height='25'/%3E%3C/g%3E%3Crect fill-opacity='.3' fill='url(%23b)' width='1000' height='1000'/%3E %3C/svg%3E");
+  // background-attachment: fixed;
+  // background-size: cover;
 
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
@@ -338,6 +368,15 @@ footer {
       background-color: var(--footer-fa);
       border-radius: 5%;
     }
+  }
+
+  .p-layer {
+    background-color: rgba(199, 230, 249, .7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   h2 {

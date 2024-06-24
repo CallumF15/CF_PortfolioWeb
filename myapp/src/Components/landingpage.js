@@ -44,7 +44,9 @@ const Landingpage = ({ fullname }) => {
 
     return (
         <>
-            <section className="py-5 text-left about-background">
+            <section className="py-5 text-left lp-background">
+            <div className='lp-layer'></div>
+
                 <div className="container">
                     <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 d-flex justify-content-center align-items-center">
                         <div className="col pt-5 pt-sm-0 py-sm-3 order-0 mx-auto text-center text-sm-start hidden">
