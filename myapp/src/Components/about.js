@@ -19,10 +19,7 @@ const About = () => {
 
                         <div className="col-lg-6 mx-auto">
                             <p className="lead mb-4 pb-5">
-                                A passionate and adaptable software development graduate with a strong determination to excel, embrace new opportunities, and overcome challenges.
-                                Proficient in languages such as C# and Java. Although my professional experience diverged from the software field, I devoted my time to being a
-                                devoted caregiver for my father and providing vital support to his business during a challenging period. Now, equipped with valuable life experiences,
-                                I am eager to re-immerse myself in the software industry, expand my skill set, and contribute as an integral member of a development team.
+                            A software development graduate with a strong foundation in programming and hands-on experience in web and game development. During a career break, I dedicated time to caring for my father and assisting with his business operations, enhancing my problem-solving, organization, and communication skills. Throughout this period, I remained committed to my technical growth through personal projects and continuous learning. Now eager to re-enter the industry, leverage my skills, and contribute to a dynamic development team.
                             </p>
                         </div>
                     </div>
