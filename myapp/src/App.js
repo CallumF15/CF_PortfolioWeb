@@ -10,6 +10,7 @@ import About from './Components/about'
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(true);  // Track loading state
 
   const fullname = "Callum Flannagan";
 
@@ -17,11 +18,16 @@ const App = () => {
   React.useEffect(() => {
     fetchTasks().then((tasks) => {
       //console.log("fetch tasks: ", tasks); //returns task object
-      setTasks(tasks.tasks); //returns tasks as array
+      if(tasks && tasks.tasks){
+        setTasks(tasks.tasks); //returns tasks as array
+      }
+    
       //console.log("get valL: ", tasks.tasks);
     })
       .catch((error) => {
         console.error('Error setting state:', error);
+      }).finally(() => {
+        setLoading(false); // Set loading to false after fetching tasks
       });
   }, []);
 
@@ -35,12 +41,17 @@ const App = () => {
       }
 
       const data = await response.json();
-
       return data;
+
     } catch (error) {
       console.error('Error fetching data:', error);
       return null;
     }
+  }
+
+    // Handle loading and empty state
+    if (loading) {
+      return <div>Loading tasks...</div>;
   }
 
 
