@@ -1,6 +1,5 @@
 import Header from './Components/header'
 import LandingPage from './Components/landingpage'
-import LoadingSpinner from './Components/Utility/LoadingSpinner';
 import Tasks from './Components/projects/tasks'
 import Footer from './Components/footer'
 import React, { useState } from 'react'
@@ -92,10 +91,7 @@ const App = () => {
       <LandingPage fullname={fullname} />
       <About />
 
-
-
       {/* {console.log("HIT element: ", tasks)} */}
-      {loading && <LoadingSpinner />}
       <Tasks tasks={tasks} onViewed={toggleTaskViewed} loading={loading} />
 
 
