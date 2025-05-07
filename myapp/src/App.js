@@ -18,10 +18,10 @@ const App = () => {
   React.useEffect(() => {
     fetchTasks().then((tasks) => {
       //console.log("fetch tasks: ", tasks); //returns task object
-      if(tasks && tasks.tasks){
+      if (tasks && tasks.tasks) {
         setTasks(tasks.tasks); //returns tasks as array
       }
-    
+
       //console.log("get valL: ", tasks.tasks);
     })
       .catch((error) => {
@@ -45,13 +45,17 @@ const App = () => {
 
     } catch (error) {
       console.error('Error fetching data:', error);
+      if (retries > 0) {
+        console.log(`Retrying... ${retries} attempts left`);
+        return fetchTasks(retries - 1);  // Retry fetching
+      }
       return null;
     }
   }
 
-    // Handle loading and empty state
-    if (loading) {
-      return <div>Loading tasks...</div>;
+  // Handle loading and empty state
+  if (loading) {
+    return <div>Loading Projects...</div>;
   }
 
 
@@ -93,7 +97,7 @@ const App = () => {
       <LandingPage fullname={fullname} />
       <About />
       {/* {console.log("HIT element: ", tasks)} */}
-      <Tasks tasks={tasks} onViewed={toggleTaskViewed}/>
+      <Tasks tasks={tasks} onViewed={toggleTaskViewed} />
 
       <Footer fullname={fullname} />
     </React.Fragment>
