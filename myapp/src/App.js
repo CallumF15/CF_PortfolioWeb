@@ -91,9 +91,14 @@ const App = () => {
 
       <LandingPage fullname={fullname} />
       <About />
+
+
+
       {/* {console.log("HIT element: ", tasks)} */}
       {loading && <LoadingSpinner />}
-      <Tasks tasks={tasks} onViewed={toggleTaskViewed} />
+      <Tasks tasks={tasks} onViewed={toggleTaskViewed} loading={loading} />
+
+
 
       <Footer fullname={fullname} />
     </React.Fragment>

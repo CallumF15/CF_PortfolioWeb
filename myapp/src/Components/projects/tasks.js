@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import Task from './task'
 import TaskDetails from './taskDetails'
+import LoadingSpinner from '../Utility/LoadingSpinner'
 
-const Tasks = ({ tasks, onViewed }) => {
+const Tasks = ({ tasks, onViewed, loading }) => {
     const [showMoreProjects, SetShowMoreProjects] = useState(false);
 
     //Runs on the first render
@@ -14,21 +15,21 @@ const Tasks = ({ tasks, onViewed }) => {
     }, [showMoreProjects])
 
     useEffect(() => {
-         triggerAnimation();
-      })
+        triggerAnimation();
+    })
 
-    function triggerAnimation(){
+    function triggerAnimation() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index, arr) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-              }
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
             })
-          });
-        
-          const hiddenElements = document.querySelectorAll('.hidden');
-          console.log( "list: ", hiddenElements)
-          hiddenElements.forEach((el) => observer.observe(el));
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        console.log("list: ", hiddenElements)
+        hiddenElements.forEach((el) => observer.observe(el));
     }
 
     const maxNumberOfProjectsVis = 3; //maximum number of projects to be shown at one time.
@@ -58,6 +59,13 @@ const Tasks = ({ tasks, onViewed }) => {
                             <h1 className="display-5 fw-bold text-center pb-3"> Projects </h1>
                             <div className="text-underline"></div>
 
+                            {loading ? (
+                                <div className="text-center pb-5 pt-5">
+                                    <LoadingSpinner />
+                                </div>
+                            ) : ""}
+    
+                
                             {/*Uncomment when more projects are added of different types*/}
                             {/* <div className='project-selector d-flex justify-content-center pt-5'>
                                     <ul className='list-group list-group-horizontal'>

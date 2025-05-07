@@ -2,7 +2,10 @@ import React from 'react';
 
 const LoadingSpinner = () => {
     return (
-        <span class="loader"></span>
+        <>
+            <span className="loader"></span>
+            <div> Loading Projects </div>
+        </>
     );
 };
 
