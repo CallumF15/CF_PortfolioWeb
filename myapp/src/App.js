@@ -1,5 +1,6 @@
 import Header from './Components/header'
 import LandingPage from './Components/landingpage'
+import LoadingSpinner from './Components/Utility/LoadingSpinner';
 import Tasks from './Components/projects/tasks'
 import Footer from './Components/footer'
 import React, { useState } from 'react'
@@ -53,12 +54,6 @@ const App = () => {
     }
   }
 
-  // Handle loading and empty state
-  if (loading) {
-    return <div>Loading Projects...</div>;
-  }
-
-
   /* Toggle Viewed Task */
   const toggleTaskViewed = (id) => {
     setTasks(tasks.map((task) => {
@@ -97,6 +92,7 @@ const App = () => {
       <LandingPage fullname={fullname} />
       <About />
       {/* {console.log("HIT element: ", tasks)} */}
+      {loading && <LoadingSpinner />}
       <Tasks tasks={tasks} onViewed={toggleTaskViewed} />
 
       <Footer fullname={fullname} />
