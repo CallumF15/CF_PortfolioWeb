@@ -31,7 +31,7 @@ const App = () => {
       });
   }, []);
 
-  async function fetchTasks() {
+  async function fetchTasks(retries = 3) {
     try {
       //const response = await fetch('/tasks');
       const response = await fetch('https://callumflannagan-server.vercel.app/tasks');
