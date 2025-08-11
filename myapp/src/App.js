@@ -4,10 +4,12 @@ import Tasks from './Components/projects/tasks'
 import Footer from './Components/footer'
 import React, { useState } from 'react'
 import './Styles/index.scss'
+import CookieDialog from './Components/cookieDialog'
 import About from './Components/about'
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
+  const [modal, setModal] = useState(false);
   const [loading, setLoading] = useState(true);  // Track loading state
 
   const fullname = "Callum Flannagan";
@@ -70,12 +72,30 @@ const App = () => {
     )
   };
 
+  // showButton = document.querySelector("dialog + button");
+  //const closeButton = document.querySelector("dialog button");
+
   return (
     <React.Fragment> {/* '<>' same as '<React.Fragment> but is not supported by all tools. It's recommended to use React.Fragment' */}
       <Header fullname={fullname} />
+      {/* <button onclick={handleClickOpen}> Open Dialog </button> */}
+
+      {/* <button onClick={() => setModal(true)}>
+        Open modal
+      </button> */}
+
+      <CookieDialog openModal={modal} closeModal={() => setModal(false)}>
+        Modal content. grg rgg
+      </CookieDialog>
+
       <LandingPage fullname={fullname} />
       <About />
+
+      {/* {console.log("HIT element: ", tasks)} */}
       <Tasks tasks={tasks} onViewed={toggleTaskViewed} loading={loading} />
+
+
+
       <Footer fullname={fullname} />
     </React.Fragment>
   )

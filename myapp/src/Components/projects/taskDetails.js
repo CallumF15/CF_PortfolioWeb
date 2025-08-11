@@ -95,6 +95,14 @@ const TaskDetails = ({ task }) => {
                             <div className="text-underline"></div>
                         </div>
 
+                        {/* <div className="mb-5">
+                            <h2 className="display-4 fw-bold text-center"> {task.name} </h2>
+                            <div className="text-underline"></div>
+                        </div> */}
+
+
+
+
                         <ProjectDetailsAbout task={task} stringImage={stringImage} btnSetState={toggleGame} btnState={setGame} />
                         <ProjectDetailsInfo task={task} stringImage={stringImage} />
 

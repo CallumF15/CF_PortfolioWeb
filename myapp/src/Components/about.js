@@ -19,7 +19,7 @@ const About = () => {
 
                         <div className="col-lg-6 mx-auto">
                             <p className="lead mb-4 pb-5">
-                                I’m an aspiring software developer with a strong foundation gained through university and personal projects in web and game development. Although I haven’t worked professionally in the field yet, I’m passionate about coding and constantly learning new technologies. I’m eager to take the next step and contribute to a development team.
+                            A software development graduate with a strong foundation in programming and hands-on experience in web and game development. During a career break, I dedicated time to caring for my father and assisting with his business operations, enhancing my problem-solving, organization, and communication skills. Throughout this period, I remained committed to my technical growth through personal projects and continuous learning. Now eager to re-enter the industry, leverage my skills, and contribute to a dynamic development team.
                             </p>
                         </div>
                     </div>
