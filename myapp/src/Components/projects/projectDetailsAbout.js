@@ -38,12 +38,6 @@ const ProjectDetailsAbout = ({ task, stringImage, btnSetState, btnState }) => {
                   {desc2}
                 </p>
 
-
-                {/* <h4 className='mt-5'> More Information </h4>
-                <p>
-                  {desc2}
-                </p> */}
-
               </div>
 
               <div className='px-3 px-sm-5 pb-3'>
@@ -52,8 +46,6 @@ const ProjectDetailsAbout = ({ task, stringImage, btnSetState, btnState }) => {
                     <>
                       <h2 className='mt-5'> Instructions </h2> <hr />
                       {parsedInstructions}
-
-                     
                     </>
                     :
                     (<h2 className='mt-5'>  </h2>)
