@@ -3,6 +3,7 @@ import { Link, animateScroll as scroll } from 'react-scroll'
 import { IconContext } from 'react-icons/lib'
 import 'bootstrap/dist/js/bootstrap.bundle' 
 
+
 //Top part of webpage - displays name/logo
 const Header = ({ fullname }) => {
     const githubLink = "http://github.com/CallumF15";
@@ -18,12 +19,6 @@ const Header = ({ fullname }) => {
                         {fullname}
 
                         {/* <img className='logo' src={logo} alt=""></img> */}
-
-                        {/* <div class="svg-wrapper">
-                            <svg>
-                                <rect class="shape" height="50" width="100%" />
-                            </svg>
-                        </div> */}
                     </a>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

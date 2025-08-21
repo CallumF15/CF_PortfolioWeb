@@ -19,7 +19,7 @@ const About = () => {
 
                         <div className="col-lg-6 mx-auto">
                             <p className="lead mb-4 pb-5">
-                            A software development graduate with a strong foundation in programming and hands-on experience in web and game development. During a career break, I dedicated time to caring for my father and assisting with his business operations, enhancing my problem-solving, organization, and communication skills. Throughout this period, I remained committed to my technical growth through personal projects and continuous learning. Now eager to re-enter the industry, leverage my skills, and contribute to a dynamic development team.
+                                Organised and adaptable professional with strong IT skills and a background in software development. Experienced with C#, web technologies, and Unity, alongside managing documentation, schedules, and small business operations. Skilled at problem-solving, learning new tools quickly, and balancing technical and organisational responsibilities. Motivated to contribute both technical expertise and reliability to a dynamic workplace
                             </p>
                         </div>
                     </div>
