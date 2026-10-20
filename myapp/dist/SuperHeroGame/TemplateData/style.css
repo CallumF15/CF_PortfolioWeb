@@ -1,0 +1,363 @@
+/* body { padding: 0; margin: 0 }
+#unity-container { position: absolute }
+#unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
+#unity-container.unity-mobile { width: 100%; height: 100% }
+#unity-canvas { background: #231F20 }
+.unity-mobile #unity-canvas { width: 100%; height: 100% }
+#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
+#unity-logo { width: 154px; height: 130px; background: url('unity-logo-dark.png') no-repeat center }
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; background: url('progress-bar-empty-dark.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-dark.png') no-repeat center }
+#unity-footer { position: relative }
+.unity-mobile #unity-footer { display: none }
+#unity-webgl-logo { float:left; width: 204px; height: 38px; background: url('webgl-logo.png') no-repeat center }
+#unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
+#unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center } */
+
+
+/* Page background and layout */
+body {
+  margin: 0;
+  padding: 30px 16px;
+  background: #121212;
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Centre the Unity player */
+#unity-container.unity-desktop {
+  width: min(960px, 100%);
+  margin: 0 auto;
+}
+
+/* Game canvas */
+#unity-canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  background: #000;
+  border-radius: 10px;
+}
+
+/* Footer beneath the game */
+#unity-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 12px;
+  min-height: 38px;
+}
+
+/* Game title */
+#unity-build-title {
+  margin-left: auto;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Fullscreen button */
+#unity-fullscreen-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 100px;
+  height: 38px;
+  padding: 0 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #292929;
+  color: white;
+  font-size: 14px;
+}
+
+#unity-fullscreen-button::after {
+  content: "Full Screen";
+  white-space: nowrap;
+}
+
+/* #unity-fullscreen-button {
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #292929;
+} */
+
+#unity-fullscreen-button:hover {
+  background-color: #444;
+}
+/* //////////////// */
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  #unity-container.unity-desktop,
+  #unity-container.unity-mobile {
+    width: 100%;
+  }
+
+  #unity-canvas {
+    border-radius: 6px;
+  }
+}
+
+
+/* ========================================
+   Unity WebGL — Portfolio Theme
+   ======================================== */
+
+:root {
+  /* Replace these fallback colours with your portfolio's colours */
+  --game-page-bg: var(--background-color, #121212);
+  --game-surface: var(--card-background, #1c1c1c);
+  --game-text: var(--text-color, #f5f5f5);
+  --game-heading: var(--heading-color, #ffffff);
+  --game-accent: var(--accent-color, #8b5cf6);
+  --game-border: var(--border-color, #333333);
+
+  --game-max-width: 960px;
+  --game-radius: 12px;
+  --game-transition: 0.2s ease;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 24px;
+  background: var(--game-page-bg);
+  color: var(--game-text);
+  font-family: inherit, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================
+   Main Unity Container
+   ======================================== */
+
+#unity-container {
+  position: relative;
+  width: 100%;
+  max-width: var(--game-max-width);
+  margin: 0 auto;
+}
+
+#unity-container.unity-desktop {
+  width: 100%;
+  max-width: var(--game-max-width);
+}
+
+/* ========================================
+   Game Canvas
+   ======================================== */
+
+#unity-canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  height: auto;
+  background: #000;
+  border: 1px solid var(--game-border);
+  border-radius: var(--game-radius);
+  box-shadow: 0 12px 36px rgb(0 0 0 / 20%);
+}
+
+/* ========================================
+   Loading Screen
+   ======================================== */
+
+#unity-loading-bar {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: min(80%, 300px);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Keep the loading logo if your Unity template supplies one */
+#unity-logo {
+  width: 154px;
+  height: 130px;
+  margin: 0 auto 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Loading bar track */
+#unity-progress-bar-empty {
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  background: var(--game-surface);
+  border: 1px solid var(--game-border);
+  border-radius: 999px;
+}
+
+/* Progress is updated by your existing JavaScript */
+#unity-progress-bar-full {
+  width: 0%;
+  height: 100%;
+  background: var(--game-accent);
+  border-radius: inherit;
+  transition: width 0.15s linear;
+}
+
+/* ========================================
+   Footer and Game Title
+   ======================================== */
+
+#unity-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-height: 52px;
+  padding-top: 12px;
+}
+
+/* Optional Unity WebGL logo */
+#unity-webgl-logo {
+  flex-shrink: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Game title */
+#unity-build-title {
+  margin-left: auto;
+  color: var(--game-heading);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   Fullscreen Button
+   ======================================== */
+
+#unity-fullscreen-button {
+  display: flex;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  background-color: var(--game-surface);
+  border: 1px solid var(--game-border);
+  border-radius: 8px;
+  transition:
+    background-color var(--game-transition),
+    border-color var(--game-transition),
+    transform var(--game-transition);
+}
+
+#unity-fullscreen-button:hover {
+  background-color: var(--game-accent);
+  border-color: var(--game-accent);
+}
+
+#unity-fullscreen-button:active {
+  transform: scale(0.96);
+}
+
+#unity-fullscreen-button:focus-visible {
+  outline: 2px solid var(--game-accent);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   Mobile Layout
+   ======================================== */
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  #unity-container,
+  #unity-container.unity-desktop,
+  #unity-container.unity-mobile {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #unity-canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  #unity-footer {
+    gap: 8px;
+    min-height: 46px;
+    padding-top: 10px;
+  }
+
+  #unity-build-title {
+    font-size: 12px;
+  }
+
+  #unity-fullscreen-button {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  #unity-loading-bar {
+    width: min(80%, 240px);
+  }
+}
+
+/* ========================================
+   Unity Mobile Mode
+   ======================================== */
+
+#unity-container.unity-mobile {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#unity-container.unity-mobile #unity-canvas {
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+

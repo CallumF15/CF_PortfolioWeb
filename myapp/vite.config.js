@@ -14,5 +14,13 @@ export default defineConfig({
         '.js': 'jsx'
       }
     }
-  }
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+    },
+  },
 });
