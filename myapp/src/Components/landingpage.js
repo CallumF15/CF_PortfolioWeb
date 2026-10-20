@@ -1,6 +1,4 @@
-const Landingpage = ({ fullname }) => {
-
-    // const AvatarPic = "/Images/avatar.png"; //consider using this
+const Landingpage = () => {
 
     return (
         <>

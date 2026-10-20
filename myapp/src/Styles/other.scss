@@ -32,52 +32,173 @@ a {
 }
 
 /* Subtle technical grid */
-
 .hero::before {
   content: "";
   position: absolute;
   z-index: -1;
   inset: 0 0 0 48%;
-  background-image:
-    linear-gradient(
-      rgba(240, 242, 236, 0.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(240, 242, 236, 0.035) 1px,
-      transparent 1px
-    );
+  background-image: linear-gradient(rgba(240, 242, 236, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 242, 236, 0.035) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 45%,
-    transparent
-  );
+  mask-image: linear-gradient(to right,
+      transparent,
+      black 45%,
+      transparent);
   pointer-events: none;
+}
+
+////
+/// 
+
+
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 48%;
+  pointer-events: none;
+
+  /* Bright lime grid lines */
+  background-image:
+    linear-gradient(rgba(210, 255, 110, 1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(210, 255, 110, 1) 1px, transparent 1px);
+  background-size: 48px 48px;
+
+  /* Soft neon glow */
+  filter:
+    drop-shadow(0 0 1px rgba(197, 244, 103, 1))
+    drop-shadow(0 0 4px rgba(197, 244, 103, 0.85))
+    drop-shadow(0 0 8px rgba(197, 244, 103, 0.4));
+
+  /* Horizontal fade + soft vertical pulse */
+  -webkit-mask-image:q
+    linear-gradient(to right, transparent, black 45%, transparent),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.15) 8%,
+      rgba(0, 0, 0, 0.5) 14%,
+      rgba(0, 0, 0, 0.8) 20%,
+      rgba(0, 0, 0, 0.5) 26%,
+      transparent 36%
+    );
+
+  mask-image:
+    linear-gradient(to right, transparent, black 45%, transparent),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.15) 8%,
+      rgba(0, 0, 0, 0.5) 14%,
+      rgba(0, 0, 0, 0.8) 20%,
+      rgba(0, 0, 0, 0.5) 26%,
+      transparent 36%
+    );
+
+  -webkit-mask-size: 100% 100%, 100% 200%;
+  mask-size: 100% 100%, 100% 200%;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+
+  animation: star-rise 5s linear infinite;
+}
+
+@keyframes star-rise {
+  0% {
+    opacity: 0;
+    -webkit-mask-position: 0 0, 0 -100%;
+    mask-position: 0 0, 0 -100%;
+  }
+
+  8% {
+    opacity: 0.5;
+  }
+
+  16% {
+    opacity: 0.85;
+    -webkit-mask-position: 0 0, 0 -80%;
+    mask-position: 0 0, 0 -80%;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 1;
+    -webkit-mask-position: 0 0, 0 -55%;
+    mask-position: 0 0, 0 -55%;
+  }
+
+  45% {
+    opacity: 0.95;
+  }
+
+  55% {
+    opacity: 1;
+    -webkit-mask-position: 0 0, 0 -30%;
+    mask-position: 0 0, 0 -30%;
+  }
+
+  65% {
+    opacity: 0.9;
+  }
+
+  75% {
+    opacity: 0.75;
+    -webkit-mask-position: 0 0, 0 0%;
+    mask-position: 0 0, 0 0%;
+  }
+
+  85% {
+    opacity: 0.5;
+    -webkit-mask-position: 0 0, 0 40%;
+    mask-position: 0 0, 0 40%;
+  }
+
+  93% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-mask-position: 0 0, 0 100%;
+    mask-position: 0 0, 0 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after {
+    animation: none;
+    opacity: 0;
+  }
 }
 
 //NAV BAR
 
 .navbar {
-    width: 100%;
-    padding: .5% 5%;
-    box-sizing: border-box;
+  width: 100%;
+  padding: .5% 5%;
+  box-sizing: border-box;
 }
 
 .navbar.navbar-scrolled {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: .5% 5%;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: .5% 5%;
+  z-index: 1000;
 
-    background: #0f0f0f; // Fully opaque
-    backdrop-filter: none;
-    box-sizing: border-box;
-   
+  background: #0f0f0f; // Fully opaque
+  backdrop-filter: none;
+  box-sizing: border-box;
+
 }
 
 .logo {
@@ -274,6 +395,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -411,5 +533,3 @@ a {
     font-size: 14px;
   }
 }
-
-
