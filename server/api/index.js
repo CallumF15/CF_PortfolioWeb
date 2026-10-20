@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://YOUR-PORTFOLIO-DOMAIN.vercel.app"
+    "https://callumflannagan-server.vercel.app"
 ];
 
 // Middleware
