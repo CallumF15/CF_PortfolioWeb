@@ -1,5 +1,5 @@
 import LandingPage from "./landingpage";
-import About from "./About";
+import About from "./About.js";
 import Project from "./projects/Project";
 import Footer from "./Footer";
 import Navbar from './projects/NavBar';
