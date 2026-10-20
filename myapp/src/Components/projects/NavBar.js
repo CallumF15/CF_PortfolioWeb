@@ -38,9 +38,10 @@ export default function Navbar({ fullname }) {
     return (
         <>
             <nav className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
-                <a className="logo" href="#home">
+
+                <Link className="logo" to="/#home" onClick={(event) => handleSectionClick(event, "home")}>
                     {fullname || "YOURNAME"}<span>.</span>
-                </a>
+                </Link>
 
                 <div className="navbar-right">
                     <div className="nav-links">
@@ -62,31 +63,15 @@ export default function Navbar({ fullname }) {
                     </div>
 
                     <div className="navbar-socials">
-                        <a
-                            href="mailto:CallumFlannagan@hotmail.com?subject=Portfolio%20Feedback"
-                            aria-label="Email me"
-                            title="Email"
-                        >
+                        <a href="mailto:CallumFlannagan@hotmail.com?subject=Portfolio%20Feedback" aria-label="Email me" title="Email">
                             <FaEnvelope />
                         </a>
 
-                        <a
-                            href={linkedInLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn"
-                            title="LinkedIn"
-                        >
+                        <a href={linkedInLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
                             <FaLinkedinIn />
                         </a>
 
-                        <a
-                            href={githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="GitHub"
-                            title="GitHub"
-                        >
+                        <a href={githubLink} target="_blank" rel="noopener noreferrer"aria-label="GitHub" title="GitHub">
                             <FaGithub />
                         </a>
                     </div>

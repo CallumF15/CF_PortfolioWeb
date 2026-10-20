@@ -3,26 +3,23 @@ import About from "./About.js";
 import Project from "./projects/Project";
 import Footer from "./Footer";
 import Navbar from './projects/NavBar';
-// import LoadingSpinner from "./Utility/LoadingSpinner";
+import PortfolioNotice from "./projects/PortfolioNotice.js";
 
-function Home({ fullname, projects = [] }) {
+function Home({ fullname, projects = [], dataloading, error }) {
 
    console.log("Home projectData:", projects);
 
   return (
     <>
-
       <Navbar fullname={fullname}></Navbar>
-
-      {/* <h1>Testing the spinner</h1>
-            <LoadingSpinner /> */}
+      <PortfolioNotice/>
 
       <section id="home">
         <LandingPage fullname={fullname} />
       </section>
 
       <About />
-      <Project projects={projects} />
+      <Project projects={projects} dataloading={dataloading} error={error} />
       <Footer fullname={fullname} />
     </>
   );

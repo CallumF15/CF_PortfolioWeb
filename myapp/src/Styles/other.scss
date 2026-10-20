@@ -1,12 +1,4 @@
-
-:root {
-  --bg: #101211;
-  --surface: #191D1A;
-  --text: #F0F2EC;
-  --muted: #929A92;
-  --accent: #C5F467;
-  --border: #303630;
-}
+@use "./Theme.scss";
 
 * {
   box-sizing: border-box;
@@ -65,6 +57,8 @@ a {
   );
   pointer-events: none;
 }
+
+//NAV BAR
 
 .navbar {
     width: 100%;

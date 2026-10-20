@@ -2,7 +2,6 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import "../../Styles/Projects/ProjectDetails.scss";
 import "../../Styles/Projects/UnityProject.scss"
-
 import Navbar from "./NavBar";
 import Footer from '../Footer'
 

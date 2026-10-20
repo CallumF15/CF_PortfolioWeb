@@ -1,5 +1,13 @@
 @use "../Theme.scss";
 
+.projects-loading {
+    grid-column: 1 / -1; // Span the full width of the projects grid
+    display: flex;
+    justify-content: center; // Centre horizontally
+    align-items: center; // Centre vertically
+    min-height: 200px;
+}
+
 .loading-state {
     display: flex;
     flex-direction: column;

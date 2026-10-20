@@ -1,24 +1,31 @@
 import { useState } from "react";
 import "../../Styles/Projects/Project.scss";
-
 import { Link } from "react-router-dom";
+import LoadingSpinner from "../Utility/LoadingSpinner";
 
-const Projects = ({ projects = [] }) => {
-    const [activeCategory, setActiveCategory] = useState("All projects");
+const Projects = ({ projects = [], dataloading, error }) => {
+    const [activeCategory, setActiveCategory] = useState("All Projects");
 
     const categories = [
-        "All projects",
+        "All Projects",
         "Games",
         "Websites",
         "Applications"
     ];
 
     const filteredProjects =
-        activeCategory === "All projects"
+        activeCategory === "All Projects"
             ? projects
             : projects.filter(
                 (project) => project.category === activeCategory
             );
+
+    const categoryCounts = projects.reduce((counts, project) => {
+        counts[project.category] = (counts[project.category] || 0) + 1;
+        return counts;
+    }, {});
+
+    const totalProjects = projects.length;
 
     return (
         <section className="projects-section" id="projects">
@@ -38,14 +45,10 @@ const Projects = ({ projects = [] }) => {
                     </p>
                 </header>
 
-
                 <div className="project-filters" aria-label="Filter projects">
                     {categories.map((category, index) => (
-                        <button
-                            key={category}
-                            type="button"
-                            className={`project-filter ${activeCategory === category ? "active" : ""
-                                }`}
+                        <button key={category} type="button"
+                            className={`project-filter ${activeCategory === category ? "active" : ""}`}
                             onClick={() => setActiveCategory(category)}
                             aria-pressed={activeCategory === category}
                         >
@@ -55,6 +58,13 @@ const Projects = ({ projects = [] }) => {
 
                             <span className="filter-name">{category}</span>
 
+                            <span className="filter-count">
+                                ({String(
+                                    category === "All Projects"
+                                        ? totalProjects
+                                        : categoryCounts[category] || 0
+                                ).padStart(2, "0")})
+                            </span>
                             {activeCategory === category && (
                                 <span className="filter-indicator" aria-hidden="true">
                                     ↗
@@ -66,32 +76,41 @@ const Projects = ({ projects = [] }) => {
 
 
                 <div className="projects-grid">
-                    {filteredProjects.map((project) => (
-                        <Link
-                            to={`/projects/${project.slug}`}
-                            className="project-card"
-                            key={project.id}
-                        >
-                            <div className="project-image">
-                                <img src={project.heroImage} alt={project.title} />
+                    {
+                        dataloading ? (
+                            <div className="projects-loading">
+                                <LoadingSpinner />
+                            </div>) : error ? (
+                                <p role="alert">{error}</p>
+                            ) :
+                            (filteredProjects.map((project) => (
+                                <Link
+                                    to={`/projects/${project.slug}`}
+                                    className="project-card"
+                                    key={project.id}
+                                >
+                                    <div className="project-image">
+                                        <img src={project.heroImage} alt={project.title} />
 
-                                <div className="project-image-overlay">
-                                    <h3>{project.title}</h3>
-                                    <span>{project.category}</span>
-                                </div>
-                            </div>
+                                        <div className="project-image-overlay">
+                                            <h3>{project.title}</h3>
+                                            <span>{project.category}</span>
+                                        </div>
+                                    </div>
 
-                            <div className="project-info">
-                                <p>{project.overview}</p>
+                                    <div className="project-info">
+                                        <p>   {project.overview.length > 200
+                                            ? project.overview.slice(0, 200) + "..."
+                                            : project.overview}</p>
 
-                                <div className="project-tags">
-                                    {project.technologies.map((tech) => (
-                                        <span key={tech}>{tech}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
+                                        <div className="project-tags">
+                                            {project.technologies.map((tech) => (
+                                                <span key={tech}>{tech}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </Link>
+                            )))}
                 </div>
 
                 {filteredProjects.length === 0 && (
