@@ -57,8 +57,8 @@ const App = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/projects")
-        //const response = await fetch('https://callumflannagan-server.vercel.app/api/projects');
+        // const response = await fetch("http://localhost:5000/api/projects") /local testing
+        const response = await fetch('https://callumflannagan-server.vercel.app/api/projects');
         
 
         if (!response.ok) {

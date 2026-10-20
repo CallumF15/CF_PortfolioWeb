@@ -3,6 +3,7 @@ import About from "./About";
 import Project from "./projects/Project";
 import Footer from "./Footer";
 import Navbar from './projects/NavBar';
+// import LoadingSpinner from "./Utility/LoadingSpinner";
 
 function Home({ fullname, projects = [] }) {
 
@@ -15,7 +16,7 @@ function Home({ fullname, projects = [] }) {
 
       {/* <h1>Testing the spinner</h1>
             <LoadingSpinner /> */}
-            
+
       <section id="home">
         <LandingPage fullname={fullname} />
       </section>
