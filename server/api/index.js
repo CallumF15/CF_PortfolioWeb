@@ -6,10 +6,17 @@ const fs = require("fs");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://YOUR-PORTFOLIO-DOMAIN.vercel.app"
+];
+
 // Middleware
 app.use(cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173"
+    origin: allowedOrigins
 }));
+
+
 
 app.use(express.json());
 //app.use(express.json({ limit: "10kb" })); //use this later to limit request sizes if needed (if I allow posts)
