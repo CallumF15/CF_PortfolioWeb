@@ -31,27 +31,26 @@ a {
   background: var(--bg);
 }
 
-/* Subtle technical grid */
+/* Static grid — repeating SVG tile */
 .hero::before {
   content: "";
   position: absolute;
   z-index: -1;
   inset: 0 0 0 48%;
-  background-image: linear-gradient(rgba(240, 242, 236, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(240, 242, 236, 0.035) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: linear-gradient(to right,
-      transparent,
-      black 45%,
-      transparent);
   pointer-events: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%23F0F2EC' stroke-opacity='0.035' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 48px 48px;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 45%,
+    transparent
+  );
 }
 
-////
-/// 
-
-
-
+/* Animated lime grid — repeating SVG tile */
 .hero::after {
   content: "";
   position: absolute;
@@ -59,20 +58,14 @@ a {
   inset: 0 0 0 48%;
   pointer-events: none;
 
-  /* Bright lime grid lines */
-  background-image:
-    linear-gradient(rgba(210, 255, 110, 1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(210, 255, 110, 1) 1px, transparent 1px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%23D2FF6E' stroke-width='1'/%3E%3C/svg%3E");
   background-size: 48px 48px;
 
-  /* Soft neon glow */
-  filter:
-    drop-shadow(0 0 1px rgba(197, 244, 103, 1))
-    drop-shadow(0 0 4px rgba(197, 244, 103, 0.85))
-    drop-shadow(0 0 8px rgba(197, 244, 103, 0.4));
+  /* No stacked drop-shadow filters */
+  filter: none;
 
-  /* Horizontal fade + soft vertical pulse */
-  -webkit-mask-image:q
+  /* Horizontal fade and moving vertical pulse */
+  -webkit-mask-image:
     linear-gradient(to right, transparent, black 45%, transparent),
     linear-gradient(
       to bottom,
@@ -105,9 +98,10 @@ a {
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 
-  animation: star-rise 5s linear infinite;
+  animation: star-rise 7s linear infinite;
 }
 
+/* Pulse travels from top to bottom */
 @keyframes star-rise {
   0% {
     opacity: 0;
@@ -130,7 +124,6 @@ a {
   }
 
   35% {
-    opacity: 1;
     -webkit-mask-position: 0 0, 0 -55%;
     mask-position: 0 0, 0 -55%;
   }
@@ -140,7 +133,6 @@ a {
   }
 
   55% {
-    opacity: 1;
     -webkit-mask-position: 0 0, 0 -30%;
     mask-position: 0 0, 0 -30%;
   }
@@ -172,12 +164,165 @@ a {
   }
 }
 
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .hero::after {
     animation: none;
     opacity: 0;
   }
 }
+
+/* Subtle technical grid */
+// .hero::before {
+//   content: "";
+//   position: absolute;
+//   z-index: -1;
+//   inset: 0 0 0 48%;
+//   background-image: linear-gradient(rgba(240, 242, 236, 0.035) 1px, transparent 1px),
+//     linear-gradient(90deg, rgba(240, 242, 236, 0.035) 1px, transparent 1px);
+//   background-size: 48px 48px;
+//   mask-image: linear-gradient(to right,
+//       transparent,
+//       black 45%,
+//       transparent);
+//   pointer-events: none;
+// }
+
+// .hero::after {
+//   content: "";
+//   position: absolute;
+//   z-index: -1;
+//   inset: 0 0 0 48%;
+//   pointer-events: none;
+
+//   background-image:
+//     linear-gradient(rgba(210, 255, 110, 1) 1px, transparent 1px),
+//     linear-gradient(90deg, rgba(210, 255, 110, 1) 1px, transparent 1px);
+
+//   background-size: 48px 48px;
+
+//   /* Removed expensive glow filters */
+//   filter: none;
+
+//   -webkit-mask-image:
+//     linear-gradient(to right, transparent, black 45%, transparent),
+//     linear-gradient(
+//       to bottom,
+//       transparent 0%,
+//       rgba(0, 0, 0, 0.15) 8%,
+//       rgba(0, 0, 0, 0.5) 14%,
+//       rgba(0, 0, 0, 0.8) 20%,
+//       rgba(0, 0, 0, 0.5) 26%,
+//       transparent 36%
+//     );
+
+//   mask-image:
+//     linear-gradient(to right, transparent, black 45%, transparent),
+//     linear-gradient(
+//       to bottom,
+//       transparent 0%,
+//       rgba(0, 0, 0, 0.15) 8%,
+//       rgba(0, 0, 0, 0.5) 14%,
+//       rgba(0, 0, 0, 0.8) 20%,
+//       rgba(0, 0, 0, 0.5) 26%,
+//       transparent 36%
+//     );
+
+//   -webkit-mask-size: 100% 100%, 100% 200%;
+//   mask-size: 100% 100%, 100% 200%;
+
+//   -webkit-mask-repeat: no-repeat;
+//   mask-repeat: no-repeat;
+
+//   -webkit-mask-composite: source-in;
+//   mask-composite: intersect;
+
+//   animation: star-rise 5s linear infinite;
+// }
+
+// @keyframes star-rise {
+//   0% {
+//     opacity: 0;
+//     -webkit-mask-position: 0 0, 0 -100%;
+//     mask-position: 0 0, 0 -100%;
+//   }
+
+//   8% {
+//     opacity: 0.5;
+//   }
+
+//   16% {
+//     opacity: 0.85;
+//     -webkit-mask-position: 0 0, 0 -80%;
+//     mask-position: 0 0, 0 -80%;
+//   }
+
+//   25% {
+//     opacity: 1;
+//   }
+
+//   35% {
+//     -webkit-mask-position: 0 0, 0 -55%;
+//     mask-position: 0 0, 0 -55%;
+//   }
+
+//   45% {
+//     opacity: 0.95;
+//   }
+
+//   55% {
+//     -webkit-mask-position: 0 0, 0 -30%;
+//     mask-position: 0 0, 0 -30%;
+//   }
+
+//   65% {
+//     opacity: 0.9;
+//   }
+
+//   75% {
+//     opacity: 0.75;
+//     -webkit-mask-position: 0 0, 0 0%;
+//     mask-position: 0 0, 0 0%;
+//   }
+
+//   85% {
+//     opacity: 0.5;
+//     -webkit-mask-position: 0 0, 0 40%;
+//     mask-position: 0 0, 0 40%;
+//   }
+
+//   93% {
+//     opacity: 0.25;
+//   }
+
+//   100% {
+//     opacity: 0;
+//     -webkit-mask-position: 0 0, 0 100%;
+//     mask-position: 0 0, 0 100%;
+//   }
+// }
+
+// @media (prefers-reduced-motion: reduce) {
+//   .hero::after {
+//     animation: none;
+//     opacity: 0;
+//   }
+// }
+
+// .hero::after {
+//   animation: none;
+// }
+
+// .hero.is-visible::after {
+//   animation: star-rise 5s linear infinite;
+// }
+
+// @media (prefers-reduced-motion: reduce) {
+//   .hero.is-visible::after {
+//     animation: none;
+//     opacity: 0;
+//   }
+// }
 
 //NAV BAR
 
