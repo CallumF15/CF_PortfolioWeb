@@ -82,13 +82,13 @@ const App = () => {
     fetchProjects();
   }, []);
 
-  if (loading) {
-    return <LoadingSpinner />;
-  }
+  // if (loading) {
+  //   return <LoadingSpinner />;
+  // }
 
-  if (error) {
-    return <p role="alert">{error}</p>;
-  }
+  // if (error) {
+  //   return <p role="alert">{error}</p>;
+  // }
 
  
   return (
