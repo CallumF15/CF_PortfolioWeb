@@ -5,7 +5,7 @@ import React from 'react'
 
 const imageHook = (imagepath) => {
 
-    const image = process.env.PUBLIC_URL + imagepath;
+    const image = imagepath;
 
     const folderDirectory = "Images/";
     const splitText = image.split('/')[1].split('.'); //separate filepath by / into two words & //separate remaining text from file format type.
@@ -23,3 +23,20 @@ const imageHook = (imagepath) => {
 }
 
 export default imageHook
+
+
+//replace above with below
+// const getImageSrcSet = (imagePath) => {
+//     const folderDirectory = "Images/";
+
+//     const filename = imagePath
+//         .split("/")
+//         .pop()
+//         .split(".")[0];
+
+//     const format = "." + imagePath.split(".").pop();
+
+//     return `${folderDirectory}${filename}-s${format} 360w, ${folderDirectory}${filename}-m${format} 1200w`;
+// };
+
+// export default getImageSrcSet;

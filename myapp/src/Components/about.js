@@ -1,32 +1,85 @@
-import React from 'react'
+import "../Styles/About.scss";
 
 const About = () => {
-
     return (
-        <>
-            <section className='About about-bg-pattern'>
-                <div className='about-bg-pattern hidden p-5'>
+        <section className="about-section" id="about">
+            <div className="about-container">
+                <div className="about-heading">
+                    <span className="about-eyebrow">
+                        <span className="about-dot" />
+                        A LITTLE ABOUT ME
+                    </span>
 
-                    <div className="about-custom-shape bg-light">
-                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="shape-fill"></path>
-                        </svg>
+                    <h2>
+                        More than just
+                        <br />
+                        <span className="about-accent">writing code.</span>
+                    </h2>
+                </div>
+
+                <div className="about-content">
+                    <div className="about-copy">
+                        <p className="about-intro">
+                            I'm a junior software developer with a background in Computer Games Software Development and a passion for building well-structured, maintainable software.
+                        </p>
+
+                        <p>
+                            Working across C#, Java, C++ and Python, I've developed projects ranging from modular 
+                            gameplay systems to REST APIs and data analysis tools. I enjoy breaking down complex 
+                            problems, improving existing code and designing reusable components that make software 
+                            easier to understand, test and extend.
+                        </p>
+
+                        <p>
+                            My approach is centred on thoughtful software design, continuous learning and writing 
+                            code with a clear purpose. Whether I'm refactoring a system, building backend functionality
+                             or exploring new technologies, I aim to create solutions that are practical, reliable 
+                             and built to grow.
+                        </p>
+
+
+                        <a className="about-cta" href="#projects">
+                            Explore my work <span>↗</span>
+                        </a>
                     </div>
 
-                    <div className="pt-2 pb-5 my-5 text-center">
-                        <h1 className="display-5 fw-bold">About me</h1>
-                        <div className="text-underline mb-4"></div>
+                    <div className="about-side">
+                        <div className="about-card">
+                            <span className="about-card-number">01</span>
+                            <h3>Problem solver</h3>
+                            <p>
+                                I enjoy breaking complex challenges into clear, manageable
+                                solutions.
+                            </p>
+                        </div>
 
-                        <div className="col-lg-6 mx-auto">
-                            <p className="lead mb-4 pb-5">
-                                Organised and adaptable professional with strong IT skills and a background in software development. Experienced with C#, web technologies, and Unity, alongside managing documentation, schedules, and small business operations. Skilled at problem-solving, learning new tools quickly, and balancing technical and organisational responsibilities. Motivated to contribute both technical expertise and reliability to a dynamic workplace
+                        <div className="about-card">
+                            <span className="about-card-number">02</span>
+                            <h3>Always learning</h3>
+                            <p>
+                                Exploring technologies, refining my skills and finding
+                                better ways to build.
+                            </p>
+                        </div>
+
+                        <div className="about-card">
+                            <span className="about-card-number">03</span>
+                            <h3>Detail focused</h3>
+                            <p>
+                                Combining technical thinking with organisation, usability
+                                and care in the final result.
                             </p>
                         </div>
                     </div>
                 </div>
-            </section>
-        </>
-    )
-}
 
-export default About
+                <div className="about-bottom">
+                    <span>CURIOUS BY NATURE.</span>
+                    <span>BUILT WITH PURPOSE.</span>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default About;

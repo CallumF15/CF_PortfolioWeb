@@ -1,127 +1,85 @@
 const express = require("express");
-const router = express.Router()
-const cors = require('cors');
-const bird = require('./bird')
-const path = require('path');
-const cookie = require('./cookies')
-var cookieParser = require('cookie-parser')
-var session = require('express-session');
-var fs = require('fs');
-
-const PORT = process.env.PORT || 5000;
+const cors = require("cors");
+const path = require("path");
+const fs = require("fs");
 
 const app = express();
-app.use(cors());
+const PORT = process.env.PORT || 5000;
 
-// app.use(express.static(path.join(__dirname, '../myapp/src')));
-app.use(express.static(path.join(__dirname, '..', '../myapp/public')));
-app.use(express.static(path.join(__dirname, '..', '../myapp/src')));
-// app.use(express.static("public"));
-// app.use(express.static("src"));
+// Middleware
+app.use(cors({
+    origin: process.env.CLIENT_URL || "http://localhost:5173"
+}));
 
-//app.use('/bird', bird)
+app.use(express.json());
+//app.use(express.json({ limit: "10kb" })); //use this later to limit request sizes if needed (if I allow posts)
+app.use(express.urlencoded({ extended: true }));
 
-//uncomment later
-// app.use(cookieParser())
-// app.use(session({
-//   secret: "Shh, its a secret!",
-//   resave: true, //forces session to be saved
-//   saveUninitialized: false,      // Forces a session that is "uninitialized" to be saved to the store
-//   cookie: {
-//   },
-// }));
+// Serve React public and source files during development
+app.use(express.static(path.join(__dirname, "../myapp/public")));
+app.use(express.static(path.join(__dirname, "../myapp/src")));
 
-//  app.all('/secret', (req, res, next) => {
-//   console.log('Accessing the secret section ...')
-//   next() // pass control to the next handler
-// })
-
+// Homepage / API status
 app.get("/", (req, res) => {
-    // res.sendFile(path.join(__dirname , '..', '../myapp/public/index.html'));
-    //    res.sendFile(path.join('../public/index.html' , {root:__dirname}));
-    //res.send("dir: " + __dirname);
+    res.send("Portfolio API is running!");
 });
 
-// app.route('/book')
-//   .get((req, res) => {
-//     res.send('Get a random book')
-//     console.log('Get a random book');
-//   })
-//   .post((req, res) => {
-//     res.send('Add a book')
-//     console.log('Add a book');
-//   })
-//   .put((req, res) => {
-//     res.send('Update the book')
-//     console.log('Update the book');
-//   })
+// Return project data from projects.json
+app.get("/api/projects", async (req, res, next) => {
+    try {
+        const filePath = path.join(__dirname, "projects.json");
+        const data = await fs.promises.readFile(filePath, "utf8");
+        const projects = JSON.parse(data);
 
-// app.get('/about', (req, res) => {
-//   console.log("abouttttttttttt");
-//   res.send('about');
-// })
-
-//Server PARSE json files
-var obj, tasks;
-app.get("/tasks", (err, res) => {
-    fs.readFile(__dirname + '/projects.json', 'utf8', function (err, data) {
-        if (err) {
-            console.log("error reading file: " + err);
-            throw err;
-        }
-
-        obj = JSON.parse(data);
-        console.log("obj: " + obj)
-        //console.log("obj: " + obj[0].name)
-        tasks = JSON.stringify(obj);
-        console.log("json: " + tasks)
-    });
-
-    res.json(obj);
-})
-
-app.get("/message", (req, res) => {
-    res.json({ message: "Hello from server!" });
+        res.json(projects);
+    } catch (error) {
+        next(error);
+    }
 });
 
-// create a GET route
-// app.get('/*', (req, res) => {
-//   console.log("hello on `'/'");
+//add later if functionality to login and add project
+// app.post("/projects", (req, res) => {
+//     const project = req.body;
 
-//   if (req.cookies.name = "site visited times:") {
+//     console.log(project.title);    // "My New Game"
+//     console.log(project.category); // "Games"
 
-//   }
-
-//   if (req.session.page_views) {
-//     req.session.page_views++;
-//     console.log("you visited this page " + req.session.page_views + " times");
-//     res.cookie('site visited times:', req.session.page_views).send('cookie set')
-//   } else {
-//     req.session.page_views = 1;
-//     res.cookie('site visited times:', req.session.page_views).send('cookie set');
-//   }
-
-//   // // Cookies that have not been signed
-//   // console.log('Cookies: ', req.cookies)
-
-//   // // Cookies that have been signed
-//   // console.log('Signed Cookies: ', req.signedCookies)
-
-//   //let pathdirectory = ["myapp", "src"];
-//   //res.sendFile(path.join(__dirname, ...pathdirectory, "App.js"));
-//   /// pathdirectory = ["myapp","public"];
-//   //res.status(200).sendFile(path.join(__dirname, ...pathdirectory, "index.html"));
-// })
-
-// app.get('/*', (req, res) => {
-//   console.log("hello on all");
-//   // update this path to match how you set up express to serve static and where your build is output to
-//   res.send(res.sendFile(path.join(__dirname, 'myapp', 'public', 'index.html')));
+//     res.json({ message: "Project received" });
 // });
 
 
-app.listen(PORT, () => {
-    console.log(`Server listening on test: ${PORT}`);
-})
+//Enable later when I make contact form
+// app.post("/contact", (req, res) => {
+//     const { name, message } = req.body;
 
-module.exports = app	
+//     res.json({
+//         received: true,
+//         name,
+//         message
+//     });
+// });
+
+// Handle unknown routes
+app.use((req, res) => {
+    res.status(404).json({
+        error: "Route not found"
+    });
+});
+
+// Central error handler
+app.use((err, req, res, next) => {
+    console.error(err);
+
+    res.status(500).json({
+        error: "Internal server error"
+    });
+});
+
+// Start server
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server listening on port ${PORT}`);
+    });
+}
+
+module.exports = app;

@@ -1,76 +1,44 @@
-import React, { useState } from 'react'
-
 const Landingpage = ({ fullname }) => {
-    const person = {
-        firstName: fullname,
-        secondName: "Flannagan",
-        message: "Hi I'm"
-    }
 
-    const [personDetails, setPersonDetails] = useState(person); //user name to be displayed
-    const [message, setMessage] = useState([{}]);
-    //const [bird, setBird] = useState([{}]);
-
-    const AvatarPic = process.env.PUBLIC_URL + "/Images/avatar.png";
-
-    let forename;
-    let surname;
-
-    // React.useEffect(() => {
-    //     fetchBird("bird");
-
-    //     fetch("/message")
-    //         .then((res) => res.json())
-    //         .then(message => setMessage(message))
-    //         .catch(error => console.log(error))
-    // }, []);
-
-    (function splitNameHandler() {
-        const myArray = fullname.split(" ");
-        forename = myArray[0];
-        surname = myArray[1];
-    })()
-
-    // function fetchBird(url) {
-    //     // if(typeof url !== String){
-    //     //     console.log("not string")
-    //     // }else{
-    //     fetch("/" + url)
-    //         .then((res) => res.json())
-    //         .then(bird => setBird(bird))
-    //         .catch(error => console.log(error))
-    //     // }
-    // }
+    // const AvatarPic = "/Images/avatar.png"; //consider using this
 
     return (
         <>
-            <section className="py-5 text-left lp-background">
-            <div className='lp-layer'></div>
-
-                <div className="container">
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 d-flex justify-content-center align-items-center">
-                        <div className="col pt-5 pt-sm-0 py-sm-3 order-0 mx-auto text-center text-sm-start hidden">
-
-                            <h1 className="fw-light ">
-                                <span> {personDetails.message} </span> <br />
-                                {/* <span className=''> <b> {personDetails.firstName} </b> {personDetails.secondName} </span> */}
-                                <span className=''> <b> {forename} </b> {surname} </span>
-                                {/* delete this at somepoint -> text server message {message.message}  */}
-                                {/* {bird.bird} */}
-                            </h1>
-                            <p className="lead">
-                                A graduate software developer with a passion for computer games and web development.
-                            </p>
-
-                            <a href="mailto: CallumFlannagan@hotmail.com?subject=Portfolio%Feedback" className="btn btn-secondary btn-lg my-2">Contact me</a>
-                        </div>
-
-                        <div className="col order-1 py-sm-2 d-flex justify-content-center align-items-center hidden">
-                            {/* <img src={mePic} className="img-fluid" alt="me" /> */}
-
-                            <img src={AvatarPic} className="img-fluid" alt="me" />
-                        </div>
+            <section className="hero">
+                
+                <main className="hero-content">
+                    <div className="hero-eyebrow">
+                        <span className="status-dot" />
+                        <span>Junior Software developer · Portfolio</span>
                     </div>
+
+                    <h1>
+
+                        I build, learn, 
+                        <br />
+                        <span className="accent-text">
+                            and bring ideas to life.
+                        </span>
+                    </h1>
+
+                    <p className="hero-description">
+                        Thoughtful software, purposeful interfaces, and a commitment to continuous improvement.
+                    </p>
+
+                    <div className="hero-actions">
+                        <a href="#projects" className="button-primary">
+                            Explore my work <span>↘</span>
+                        </a>
+
+                        <a href="#about" className="button-secondary">
+                            More about me <span>↗</span>
+                        </a>
+                    </div>
+                </main>
+
+                <div className="hero-footer">
+                    <span>01 / SELECTED WORK</span>
+                    <a href="#projects">Scroll to explore ↓</a>
                 </div>
             </section>
         </>

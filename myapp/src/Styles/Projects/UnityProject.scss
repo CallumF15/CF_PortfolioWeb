@@ -1,0 +1,96 @@
+.unity-game-section {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 2rem;
+  color: var(--text-color, inherit);
+  background: var(--card-background, transparent);
+  border: 1px solid var(--border-color, rgba(128, 128, 128, 0.2));
+  border-radius: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    border-color: var(--accent-color, var(--primary-color, currentColor));
+  }
+
+  .unity-game-heading {
+    margin: 0 0 1.5rem;
+    color: var(--heading-color, var(--text-color, inherit));
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+  }
+
+  .unity-game-frame {
+    display: block;
+    width: 100%;
+    height: 713px;
+    border: 1px solid var(--border-color, rgba(128, 128, 128, 0.2));
+    border-radius: 10px;
+    background: var(--background-color, #111);
+  }
+
+  .unity-game-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 180px;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    color: var(--button-text, #fff);
+    background: var(--accent-color, var(--primary-color, #6c63ff));
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent-color, var(--primary-color, #6c63ff));
+      outline-offset: 4px;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .unity-game-section {
+    margin-top: 2rem;
+    padding: 1rem;
+
+    .unity-game-frame {
+      height: 500px;
+    }
+
+    .unity-game-button {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .unity-game-section {
+    .unity-game-frame {
+      height: 400px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .unity-game-section,
+  .unity-game-section .unity-game-button {
+    transition: none;
+  }
+}
