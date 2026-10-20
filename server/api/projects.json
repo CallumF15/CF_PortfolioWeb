@@ -95,7 +95,7 @@
         "outcome": "The project resulted in a playable 2D superhero flying game developed in Unity, featuring player movement, procedurally generated platforms and objects, collectibles, enemy encounters, and an AR-inspired presentation using footage filmed from a car window. Returning to the project independently has allowed me to build on that foundation, review the existing implementation, and continue refining the gameplay and code structure.",
         "learnings": "Developing this project strengthened my understanding of gameplay programming in Unity and C#, particularly in procedural generation, configurable gameplay systems, and integrating alternative input methods through the Leap Motion SDK. Working with a multidisciplinary team also taught me the importance of collaboration and designing flexible systems that support iteration. Revisiting the project years later has reinforced the value of maintainable code and shown me how an existing prototype can be reviewed, improved, and extended beyond its original scope.",
         "gallery": [],
-        "repository": "",
+        "repository": "https://github.com/CallumF15/2D-Superhero-Game",
         "liveDemo": "../SuperHeroGame/game.html"
     }
 ]
