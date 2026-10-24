@@ -4,7 +4,7 @@ import './Styles/other.scss'
 import { Routes, Route } from "react-router-dom";
 import ProjectDetails from "./Components/projects/ProjectDetails";
 import ScrollToTop from './Components/Utility/ScrollToTop';
-import Hero from './Components/Utility/Hero'
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   const [projects, setProjects] = useState([]);
@@ -45,6 +45,7 @@ const App = () => {
   return (
     <React.Fragment> {/* '<>' same as '<React.Fragment> but is not supported by all tools. It's recommended to use React.Fragment' */}
 
+      <Analytics/>
       <ScrollToTop /> {/* React Router changes pages without reloading the browser, so the previous scroll position can persist. ScrollToTop resets the page to the top whenever the route changes. */}
       {/* <Hero /> */}
 
