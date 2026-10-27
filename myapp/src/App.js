@@ -16,8 +16,10 @@ const App = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        //const response = await fetch("http://localhost:5000/api/projects") //local testing
-        const response = await fetch('https://callumflannagan-server.vercel.app/api/projects');
+        console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
+       
+        const API_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://callumflannagan-server.vercel.app";
+        const response = await fetch(`${API_URL}/api/projects`)
 
         if (!response.ok) {
           throw new Error("Failed to load projects.");
@@ -35,7 +37,7 @@ const App = () => {
       } catch (err) {
         setError(err.message);
       } finally {
-        setLoading(false);
+        setLoading(false);c
       }
     };
 

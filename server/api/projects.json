@@ -96,6 +96,6 @@
         "learnings": "Developing this project strengthened my understanding of gameplay programming in Unity and C#, particularly in procedural generation, configurable gameplay systems, and integrating alternative input methods through the Leap Motion SDK. Working with a multidisciplinary team also taught me the importance of collaboration and designing flexible systems that support iteration. Revisiting the project years later has reinforced the value of maintainable code and shown me how an existing prototype can be reviewed, improved, and extended beyond its original scope.",
         "gallery": [],
         "repository": "https://github.com/CallumF15/2D-Superhero-Game",
-        "liveDemo": "../SuperHeroGame/game.html"
+        "liveDemo": ""
     }
 ]
