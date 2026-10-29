@@ -38,4 +38,4 @@ This project is a personal portfolio website developed to provide a central plac
 - **Performance Analytics:** Integrates Vercel Analytics.
 
 
-- Live Portfolio: [Portfolio Website]((https://callumflannagan-client.vercel.app/))
+**Live Portfolio:** [View My Portfolio](https://callumflannagan-client.vercel.app/)
