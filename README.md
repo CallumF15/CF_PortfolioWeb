@@ -8,6 +8,11 @@ A full-stack portfolio web application built to showcase my software development
 
 This project is a personal portfolio website developed to provide a central place to showcase my development work and technical experience. It uses a React frontend alongside a Node.js and Express backend to dynamically retrieve and display project information through REST API endpoints.
 
+## Recent Updates
+
+- Completely redesigned the frontend with a refreshed user interface and modern visual styling.
+- Overhauled the frontend layout and presentation to improve the overall user experience.
+
 ## Tech Stack
 
 **Frontend**
@@ -44,4 +49,6 @@ This project is a personal portfolio website developed to provide a central plac
 - Introduce automated frontend and backend testing.
 - Further optimise performance and responsiveness.
 
-**Live Portfolio:** [View My Portfolio](https://callumflannagan-client.vercel.app/)
+## Live Demo
+
+**[View My Portfolio](https://callumflannagan-client.vercel.app/)**
