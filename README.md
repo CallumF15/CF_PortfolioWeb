@@ -37,5 +37,11 @@ This project is a personal portfolio website developed to provide a central plac
 - **Custom Styling:** Uses Sass to organise styling and maintain a consistent interface.
 - **Performance Analytics:** Integrates Vercel Analytics.
 
+## Future Improvements
+
+- Expand dynamic project management functionality.
+- Improve accessibility and SEO.
+- Introduce automated frontend and backend testing.
+- Further optimise performance and responsiveness.
 
 **Live Portfolio:** [View My Portfolio](https://callumflannagan-client.vercel.app/)
